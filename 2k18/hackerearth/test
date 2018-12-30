@@ -1,0 +1,51 @@
+process.stdin.resume();
+process.stdin.setEncoding("utf-8");
+var stdin_input = "";
+
+process.stdin.on("data", function (input) {
+    stdin_input += input;                               // Reading input from STDIN
+});
+
+process.stdin.on("end", function () {
+    main(stdin_input);
+});
+
+function nearestPrime(n) {
+    let x = n;
+    while (flag) {
+        if (x) {
+
+        }
+
+    }
+}
+function findAlternate(c) {
+    let step = 1;
+    let flag = true;
+    let prime;
+    let count = 0;
+    while (flag) {
+        for (let i = c - 1; i >= 2; i--) {
+            count = 0;
+            for (let j = 2; j < i / 2; j++) {
+                if (i % j === 2) {
+                    
+                }
+            }
+        }
+    }
+}
+
+function main(input) {
+    input = input.split("\n");
+    let tc = Number(input[0]);
+    for (let i = 0; i < tc; i++) {
+        let strLen = input[i * 2 + 1];
+        let str = input[i * 2 + 2];
+        let output = '';
+        for (let j = 0; j < strLen; j++) {
+            let code = str.charCodeAt(j);
+            output += findAlternate(code);
+        }
+    }
+}

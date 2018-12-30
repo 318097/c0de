@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File upload</title>
+	<style type="text/css">
+		div{
+			position: relative;
+		}
+		input{
+			border-bottom: 1px solid red;
+		}
+		button{
+			position: absolute;
+			top: 3px;
+			left: 0;
+			background: red;
+			color: white;
+			display: inline-block;
+			width: 83px;
+			border: none;
+			padding: 3px;
+		}
+	</style>
+</head>
+<body>
+<div>
+<input type="file" name="" id="file">
+<button onclick="openUpload()">Click</button>
+</div>
+
+<script type="text/javascript">
+	function openUpload(){
+		document.getElementById('file').click();
+	}
+	document.getElementById('file').onchange = function(){
+		console.log(this);
+	}
+</script>
+</body>
+</html>

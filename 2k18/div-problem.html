@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Problem : DIV pushed down</title>
+    <style>
+      div.container {
+        padding: 20px;
+        margin: 0;
+      }
+      div.box {
+        /* vertical align has fixed the problem */
+        vertical-align: top;
+        display: inline-block;
+        width: 49%;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      #box1 {
+        background: rgb(8, 53, 112);
+      }
+      #box2 {
+        background: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="border: px solid rgb(37, 37, 37)">
+      <div class="box" id="box1"><h2 style="text-align: center">Hello</h2></div>
+      <div class="box" id="box2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
+        voluptatum distinctio totam cumque ratione id magni ipsa suscipit itaque
+        expedita perspiciatis vitae nihil, nostrum, doloremque laboriosam
+        repellendus architecto delectus? Id? Sapiente eos cumque optio dolore ab
+        earum dolores, eveniet doloribus aliquam, eum perspiciatis. Veritatis
+        eligendi illum maxime, consequatur exercitationem accusantium beatae
+        iusto est inventore, officia deserunt cupiditate vero mollitia error.
+        Dicta culpa quas officiis sed asperiores placeat adipisci vel debitis
+        nemo dignissimos, facere quaerat a, ratione, saepe molestias repellendus
+        laudantium reiciendis alias mollitia! Quam odio sit error obcaecati cum
+        saepe.
+      </div>
+    </div>
+  </body>
+</html>

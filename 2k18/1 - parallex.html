@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parallex CSS</title>
+    <style>
+        html,
+        body {
+            height: 100vh;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: font2;
+
+        }
+
+        @font-face {
+            font-family: font1;
+            src: url('./_assets/font1.ttf');
+        }
+
+        @font-face {
+            font-family: font2;
+            src: url('./_assets/font2.ttf');
+        }
+
+        .background {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.75;
+            background-size: cover;
+        }
+
+        .img1 {
+            background-image: url('./_assets/image1.jpeg');
+        }
+
+        .img2 {
+            background-image: url('./_assets/image3.jpeg');
+            height: 400px;
+        }
+
+        .img3 {
+            background-image: url('./_assets/image2.jpeg');
+            height: 400px;
+        }
+
+        .img4 {
+            background-image: url('./_assets/image4.jpeg');
+        }
+
+        .content {
+            text-align: center;
+            position: relative;
+            height: 100%;
+        }
+
+        .content .title {
+            font-weight: bold;
+            font-size: 60px;
+            border: 5px solid #fff;
+            padding: 20px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: 2s;
+
+        }
+
+        .content .title:hover {
+            background: #fff;
+            border: 5px solid #fff;
+        }
+
+        .content .contact_us {
+            font-weight: bold;
+            font-size: 35px;
+            box-sizing: border-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+
+        section {
+            padding: 2em;
+            text-align: center;
+            line-height: 1.5em;
+        }
+
+        section h1 {
+            font-weight: bold;
+        }
+
+        section p {
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background img1">
+        <div class="content">
+            <span class="title">
+                Brainbox.in
+            </span>
+        </div>
+    </div>
+    <section>
+        <h1>Title 1</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquam, accusantium iusto, excepturi molestias deleniti
+            dolorem pariatur laudantium, commodi veniam nesciunt. Alias libero veniam numquam, vitae quae eos doloremque
+            perferendis reprehenderit commodi officiis, itaque repellendus. Architecto alias quidem sint, ullam, nesciunt
+            vel temporibus totam ab itaque qui quo eos numquam placeat. Optio quibusdam labore harum esse inventore. Nam
+            iure nemo voluptates placeat labore deleniti rem. Vitae, aliquid corporis provident quidem quae optio odit repellat
+            dolorum aperiam vel harum, consequatur ipsum! Exercitationem magni necessitatibus sequi dicta dolore illo veniam,
+            corrupti laborum eaque quo asperiores et illum! Beatae, dolorem. Voluptatibus, nihil. Blanditiis.
+        </p>
+    </section>
+
+    <div class="background img2"></div>
+    <section>
+        <h1>Title 2</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquam, accusantium iusto, excepturi molestias deleniti
+            dolorem pariatur laudantium, commodi veniam nesciunt. Alias libero veniam numquam, vitae quae eos doloremque
+            perferendis reprehenderit commodi officiis, itaque repellendus. Architecto alias quidem sint, ullam, nesciunt
+            vel temporibus totam ab itaque qui quo eos numquam placeat. Optio quibusdam labore harum esse inventore. Nam
+            iure nemo voluptates placeat labore deleniti rem. Vitae, aliquid corporis provident quidem quae optio odit repellat
+            dolorum aperiam vel harum, consequatur ipsum! Exercitationem magni necessitatibus sequi dicta dolore illo veniam,
+            corrupti laborum eaque quo asperiores et illum! Beatae, dolorem. Voluptatibus, nihil. Blanditiis.
+        </p>
+    </section>
+
+    <div class="background img3"></div>
+    <section>
+        <h1>Title 3</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam aliquam, accusantium iusto, excepturi molestias deleniti
+            dolorem pariatur laudantium, commodi veniam nesciunt. Alias libero veniam numquam, vitae quae eos doloremque
+            perferendis reprehenderit commodi officiis, itaque repellendus. Architecto alias quidem sint, ullam, nesciunt
+            vel temporibus totam ab itaque qui quo eos numquam placeat. Optio quibusdam labore harum esse inventore. Nam
+            iure nemo voluptates placeat labore deleniti rem. Vitae, aliquid corporis provident quidem quae optio odit repellat
+            dolorum aperiam vel harum, consequatur ipsum! Exercitationem magni necessitatibus sequi dicta dolore illo veniam,
+            corrupti laborum eaque quo asperiores et illum! Beatae, dolorem. Voluptatibus, nihil. Blanditiis.
+        </p>
+    </section>
+    <div class="background img4">
+        <div class="content">
+            <div class="contact_us">
+                #46, D3 Haine's Road,<br>Frazer Town, Bangalore - 560005<br>India.<br>Mobile : +91 7760 279 446
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>

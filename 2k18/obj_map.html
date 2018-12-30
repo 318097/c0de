@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Object mapping</title>
+  </head>
+  <body>
+    <script>
+      let obj = [
+        {'name' : 'one', 'age': 21},
+        {'name' : 'two', 'age': 51},
+        {'name' : 'three', 'age': 65},
+        {'name' : 'four', 'age': 12},
+      ];
+
+      obj = obj.map(el => {
+      return  {
+        age : el.age * 2,
+        name : el.name
+}
+      })
+
+      console.log(obj);
+     </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX loading</title>
+	<script>
+
+var oReq = new XMLHttpRequest();
+
+oReq.addEventListener("progress", updateProgress);
+oReq.addEventListener("load", transferComplete);
+oReq.addEventListener("error", transferFailed);
+oReq.addEventListener("abort", transferCanceled);
+
+oReq.open("GET",'https://jsonplaceholder.typicode.com/posts');
+oReq.send();
+oReq.onreadystatechange = function(){
+	console.log(this);
+	if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("result").innerHTML = 'downloaded';
+    }
+}
+
+
+// progress on transfers from the server to the client (downloads)
+function updateProgress (oEvent) {
+  if (oEvent.lengthComputable) {
+    var percentComplete = oEvent.loaded / oEvent.total * 100;
+    console.log("% completed " + percentComplete);
+    // ...
+  } else {
+    // Unable to compute progress information since the total size is unknown
+  }
+}
+
+function transferComplete(evt) {
+  console.log("The transfer is complete.");
+}
+
+function transferFailed(evt) {
+  console.log("An error occurred while transferring the file.");
+}
+
+function transferCanceled(evt) {
+  console.log("The transfer has been canceled by the user.");
+}	
+</script>
+</head>
+<body>
+<div id="result"></div>
+</body>
+</html>

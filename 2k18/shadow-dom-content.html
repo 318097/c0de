@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shadow DOM</title>
+</head>
+
+<body>
+    <h1>Light DOM</h1>
+    <template id="root1">
+        <!-- Normal css is not applied to the shadow dom elements -->
+        <style>
+            h1 {
+                color: green;
+            }
+        </style>
+        <h1>Shadow DOM</h1>
+        <!-- shadow dom insertion points -->
+        <!-- grab the content of the 'h1' from within the shadow root element -->
+        <content select="h4"></content>
+    </template>
+
+    <div id="host">
+        <!-- the shadow host is the div#host. It is made a host in the script below -->
+        <!-- this h4 is the content of the shaodow host -->
+        <h4>Content insertion</h4>
+    </div>
+    <hr>
+    <div id="root2">
+        <h1>Shadow DOM 2</h1>
+    </div>
+    <script type="text/javascript">
+        // <content> tag creates an insertion point.
+        // elements inserted at this insertion point are called distributed nodes.
+        // distributed nodes are merely displayed at the insertion point.
+        // they are not actually inserted into the shadow dom. 
+        let template = document.querySelector('#root1');
+        let host = document.querySelector('#host');
+        // making the div#host element the shadow root
+        let root = host.createShadowRoot();
+        // root.innerHTML = "<h1>Shadow DOM</h1>";
+        root.appendChild(document.importNode(template.content, true));
+
+        // -----------------
+
+        let root2 = document.getElementById('root2').createShadowRoot();
+        root2.innerHTML = "<content select='h1'></content><h2>Normal content</h2>";
+        console.log(document.querySelector('#root2').querySelector('h1'));
+
+        // it cannot find the h1 tag. because it is an insertion point
+        // and insertion points are not actually placed in the shadow dom.
+        // they are just displayed there...
+        console.log(root2.querySelector('h1'));
+        // this is found, because this is inserted normally..
+        console.log(root2.querySelector('h2'));
+    </script>
+</body>
+
+</html>

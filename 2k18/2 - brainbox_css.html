@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Brainbox css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .container {
+            display: inline;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 40px;
+            font-family: monospace;
+            padding: 30px;
+            color: rgb(46, 46, 46);
+            cursor: pointer;
+        }
+
+        .container:hover {
+            background: grey;
+
+
+        }
+
+        .let-b {
+            transition: 2s;
+            transform: scale(1.4);
+            border: 1px solid black;
+            display: inline-block;
+
+        }
+
+        .container:hover .let-b {
+            /* color: green; */
+            transform: scale(2);
+            font-weight: bold;
+        }
+
+        .let-r {
+            transition: 2s;
+            display: inline-block;
+        }
+
+        .container:hover .let-r {
+            text-decoration: overline;
+        }
+
+        .let-a {}
+
+        .let-i {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* .let-i letter {
+            position: absolute;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            z-index: 999;
+            background: none;
+        } */
+
+        .let-i background {
+            position: absolute;
+            background: red;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            top: 100px;
+        }
+
+        .let-n {}
+
+        .let-bb {}
+
+        .let-o {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgb(46, 46, 46);
+            position: relative;
+            top: 10px;
+            border-radius: 50%;
+            transition: 1s;
+        }
+
+        .container:hover .let-o {
+            border-radius: 0;
+            transform: rotate(-720deg);
+            background: rgb(65, 65, 131);
+        }
+
+        .let-x {
+            transition: 1s;
+            /* background: yellow; */
+            display: inline-block;
+        }
+
+        .container:hover .let-x {
+            transform: rotate(450deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span class="brain">
+            <span class="let-b">B</span>
+            <span class="let-r">r</span>
+            <span class="let-a">a</span>
+            <span class="let-i">
+                <span class="letter">i</span>
+                <span class="background"></span>
+            </span>
+            <span class="let-n">n</span>
+        </span>
+        <span class="box">
+            <span class="let-bb">b</span>
+            <span class="let-o"></span>
+            <span class="let-x">X</span>
+        </span>
+    </div>
+</body>
+
+</html>

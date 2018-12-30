@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Table Responsive
+	</title>
+	<style type="text/css">
+		html {
+			scroll-behavior: smooth;
+		}
+
+		.container {
+			margin: 0 auto;
+			width: 500px;
+			border: 1px solid lightgrey;
+			position: relative;
+		}
+
+		table,
+		.table {
+			width: 100%;
+			overflow: auto;
+		}
+
+		table thead {
+			background: grey;
+			font-weight: bold;
+		}
+
+		table thead tr th,
+		table tbody tr td {
+			padding: 5px;
+			margin: 5px;
+		}
+
+		tr {
+			width: 100%;
+			overflow-x: auto;
+		}
+
+		td {
+			padding: 15px;
+			background: green;
+			margin: 5px;
+		}
+
+		.arrow {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			background: yellow;
+			padding: 15px;
+		}
+	</style>
+	<script>
+		function func(e) {
+			let pos = document.getElementById('table').scrollLeft;
+			document.getElementById('table').scrollTo(Number(pos) + 50, 0);
+		}
+	</script>
+</head>
+
+<body>
+	<div class="container">
+		<div class="table" id="table">
+			<table>
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Mobile</th>
+						<th>Email</th>
+						<th>City</th>
+						<th>State</th>
+						<th>Country</th>
+						<th>Pin Code</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>Mehul Lakhanpal</td>
+						<td>25</td>
+						<td>7760279446</td>
+						<td>318097@gmail.com</td>
+						<td>Bangalore</td>
+						<td>Karnataka</td>
+						<td>India</td>
+						<td>560005</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Mehul Lakhanpal</td>
+						<td>25</td>
+						<td>7760279446</td>
+						<td>318097@gmail.com</td>
+						<td>Bangalore</td>
+						<td>Karnataka</td>
+						<td>India</td>
+						<td>560005</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>Mehul Lakhanpal</td>
+						<td>25</td>
+						<td>7760279446</td>
+						<td>318097@gmail.com</td>
+						<td>Bangalore</td>
+						<td>Karnataka</td>
+						<td>India</td>
+						<td>560005</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<button class="arrow" onclick="func()">
+			Scroll
+		</button>
+	</div>
+
+</body>
+
+</html>

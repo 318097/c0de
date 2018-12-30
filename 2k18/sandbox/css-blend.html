@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS blend mode</title>
+	<style type="text/css">
+		body{
+		
+		}
+		.container{
+			border: 1px solid green;
+			display: block;
+			width: 100vw;
+			height: 100vh;
+			/*background: url('./image.jpg');*/
+			/*background-repeat: no-repeat;*/
+		}
+		img{
+			height: 100%;
+			width: 100%;
+		}
+		h1{
+			position: absolute;
+			top: 30%;
+			right: 50%;
+			background: black;
+			color: white;
+			padding: 40px;
+			font-size: 25px;
+			mix-blend-mode: multiply;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<img src="./image.jpg">
+	<h1>
+	Hello World ...
+	</h1>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<template id="template">
+	<h1>Template</h1>
+	<p>Template Node</p>
+</template>
+<script type="text/javascript">
+	let ref = document.getElementById('template');
+let template = document.importNode(ref.content, true);
+document.body.append(template);
+
+</script>
+</body>
+</html>

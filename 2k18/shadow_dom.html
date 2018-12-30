@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Shadow DOM</title>
+</head>
+
+<body>
+
+    <h1>Light DOM</h1>
+    <template>
+        <!-- Normal css is not applied to the shadow dom elements -->
+        <style>
+            h1 {
+                color: green;
+            }
+        </style>
+        <h1>Shadow DOM</h1>
+    </template>
+    <div id="host"></div>
+    <hr>
+    <script type="text/javascript">
+        let template = document.querySelector('template');
+        let host = document.querySelector('#host');
+        // making the host element the shadow root
+        let root = host.createShadowRoot();
+        // root.innerHTML = "<h1>Shadow DOM</h1>";
+        root.appendChild(document.importNode(template.content, true));
+        //  --------------
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <script src="main.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        #loader {
+            position: absolute;
+            z-index: 4;
+            background: black;
+        }
+
+        #overlay-1 {
+            position: absolute;
+            z-index: 3;
+            background: grey;
+        }
+        #overlay-2 {
+            position: absolute;
+            z-index: 2;
+            background: lightgrey;
+        }
+
+        #content {
+            width: 100%;
+            height: 100vh;
+            background: #FFF;
+            position: relative;
+         }
+         h1{
+         	text-align: center;
+            font-weight: bold;
+            font-family: monospace;
+            position: absolute;
+            display: block;
+           	font-size: 5em;
+
+            top: 45%;
+        }
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes swipe {
+            0% {
+                height: 100vh;
+                width: 100%;
+                top: 0;
+            }
+            100% {
+                /*top: -100%;*/
+                height: 0;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="loader"></div>
+        <div class="overlay" id="overlay-1"></div>
+        <div class="overlay" id="overlay-2"></div>
+        <div id="content">
+            <h1>
+            	Brainbox.in
+            </h1> 
+        </div>
+    </div>
+
+    <script>    
+        let dom = document.querySelector('#content');
+        let loader = document.querySelector('#loader');
+        let overlay = document.querySelector('#overlay-1');
+        let overlay2 = document.querySelector('#overlay-2');
+
+        loader.style.animation = 'swipe';
+        loader.style.animationDuration = '1s';
+        loader.style.animationFillMode = 'forwards';
+        loader.style.animationTimingFunction = 'ease-in-out';
+
+        overlay.style.animation = 'swipe';
+        overlay.style.animationDuration = '2s';
+        overlay.style.animationFillMode = 'forwards';
+        overlay.style.animationTimingFunction = 'ease-in-out';
+
+        overlay2.style.animation = 'swipe';
+        overlay2.style.animationDuration = '3s';
+        overlay2.style.animationFillMode = 'forwards';
+        overlay2.style.animationTimingFunction = 'ease-in-out';
+
+        dom.style.animation = 'fade-in';
+        dom.style.animationDuration = '2s';
+    </script>
+</body>
+
+</html>

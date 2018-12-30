@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Select dropdown from an external button</title>
+</head>
+<script type="text/javascript">
+function myFunction(){
+	// console.log("...");
+	let dom = document.getElementById('btn');
+	// let dom = document.getElementById('btn');
+	console.log(dom);
+	dom.click();
+        // var evt = new MouseEvent("click", {
+        //     bubbles: false,
+        //     cancelable: true,
+        //     view: window
+        // });
+        // // var status = dom.dispatchEvent(evt);
+        // var status = dom.dispatchEvent(evt);
+        // console.log(status);
+}
+
+function log(){
+	console.log("log");
+}
+
+function eventList(event){
+	console.log(event);
+}
+</script>
+<body>
+<select id="drop" onclick="eventList(event)">
+	<option>Option 1</option>
+	<option>Option 2</option>
+	<option>Option 3</option>
+</select>
+
+<button onclick="myFunction()">Open drop</button>
+<button id="btn" onclick="log()">Log</button>
+
+</body>
+</html>

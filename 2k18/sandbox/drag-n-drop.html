@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        #container {
+            width: 350px;
+            height: 370px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            background: grey;
+        }
+
+        .objects {
+            border: 1px solid black;
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+        }
+    </style>
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+
+        function drop(ev) {
+            console.log(ev);
+            ev.preventDefault();
+            let data = ev.dataTransfer.getData("text");
+            console.log('id :: ', ev.target.id);
+
+            if (ev.target.id !== 'container') {
+                // ev.target.appendChild(document.getElementById(data));
+                document.getElementById('container').insertBefore(document.getElementById(data), document.getElementById(ev.target.id).nextSibling);
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="container" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <div style="background: orange" class="objects" id="drag1" draggable="true" ondragstart="drag(event)">Box 1</div>
+        <div style="background: yellow" class="objects" id="drag2" draggable="true" ondragstart="drag(event)">Box 2</div>
+        <div style="background: green" class="objects" id="drag3" draggable="true" ondragstart="drag(event)">Box 3</div>
+        <div style="background: blue" class="objects" id="drag4" draggable="true" ondragstart="drag(event)">Box 4</div>
+        <div style="background: red" class="objects" id="drag5" draggable="true" ondragstart="drag(event)">Box 5</div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Layout design css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        html,
+        body,
+        .container {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: rgba(240, 130, 27, 0.733);
+            box-sizing: border-box;
+        }
+
+        header,
+        aside,
+        section,
+        .content {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            width: 100%;
+            height: 10%;
+            background: rgb(109, 102, 102);
+        }
+
+        .content{
+            position: relative;
+            width: 100%;
+            height: 90%;
+            background: orange;
+        }
+
+        aside {
+            position: relative;
+            display: inline-block;
+            width: 20%;
+            height: 100%;
+            background: rgb(148, 148, 148);
+        }
+
+        section {
+            position: relative;
+            display: inline-block;
+            width: 75%;
+            height: 100%;
+            background: rgb(251, 251, 251);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>Header</header>
+        <div class="content">
+            <aside>Sidebar</aside>
+            <section>
+            Section
+            <!-- <h1>Section</h1>
+            <div class="boxes">
+                <div class="b1">Box 1</div>
+                <div class="b2">Box 2</div>
+                <div class="b3">Box 3</div>
+            </div> -->
+            </section>    
+        </div>    
+    </div>
+</body>
+
+</html>
