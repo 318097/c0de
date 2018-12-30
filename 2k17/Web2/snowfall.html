@@ -1,0 +1,87 @@
+<!-- Youtube : The Net Ninja :: JavaScripts Tricks #1 - Create a Snowy Background with Canvas -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS Snowfall</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		body{
+			background: #123456;
+			
+		}
+	</style>	
+	<body>
+		<canvas id="sky"></canvas>
+		<script type="text/javascript">
+			window.onload = function(){
+				// get the canvas
+				var canvas = document.getElementById('sky');
+				var ctx = canvas.getContext('2d');
+
+				// set the canvas dims to window height & width
+				var H = window.innerHeight;
+				var W = window.innerWidth;
+
+				canvas.height = H;
+				canvas.width = W;
+
+				// generate the snowflakes and apply attributes
+				var mf = 100; // maximum flakes
+				var flakes = [];
+
+				// loop through flakes and apply attributes
+				for(var i = 0; i < mf; i++){
+					flakes.push({
+						// random() generates a random no between 0 & 1
+						x : Math.random() * W,
+						y : Math.random() * H,
+						r : Math.random() * 5 + 2, // min of 2px & max of 7px
+						d : Math.random() + 1 // density of flake
+					});
+				}
+
+				// draw flakes on the canvas
+				function drawFlakes(){
+					ctx.clearRect(0, 0, W, H);
+					ctx.fillStyle = "#eee";
+					ctx.beginPath();
+					for (var i = 0; i < mf; i++) {
+						var f = flakes[i];
+						ctx.moveTo(f.x, f.y);
+						ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2, true);
+					}
+					ctx.fill();
+					moveFlakes();
+				}
+
+				// animate the flakes
+				var angle = 0;
+				function moveFlakes(){
+					angle += 0.01;
+					for (var i = 0; i < mf; i++) {
+						var f = flakes[i];
+
+						f.y += Math.pow(f.d, 2) + 1;
+						f.x += Math.sin(angle) * 2;
+
+						// if the snowflake reaches the bottom, send a new one
+						if(f.y > H){
+							flakes[i] = {
+								x : Math.random() * W,
+								y : 0,
+								r : f.r,
+								d : f.d
+							}
+						}
+					}
+				}
+
+				setInterval(drawFlakes, 25);
+			};
+		</script>
+	</body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+	<head>
+		<title>
+			Roll Over (JS EVENTS)
+		</title>
+		<style type="text/css" rel="stylesheet">
+			#container{
+				width: 400px;
+				height: auto;
+				background: #eee;
+				margin: 5px auto;
+				padding: 5px;				
+			}
+			#grid li{
+				position: relative;
+			}
+			.box{				
+				width:100px;
+				height:100px;
+				display: inline-block;
+				border:1px solid black;
+			}
+			.preview{
+				z-index: 2;
+				position: absolute;
+				top: -20px;
+				left: 110px;
+				width: 300px;
+				height: 300px;
+			}	
+			img{
+				width: 100%;
+				height: 100%;
+			}			
+		</style>	
+	</head>
+	
+	<body>
+		<div id="container">
+			<ul id="grid">
+				<li style="background: green;" class="box" id="one"><img src="images/image_1.jpg"/></li>
+				<li style="background: red;" class="box" id="two"><img src="images/image_2.jpg"/></li>
+				<li style="background: purple;" class="box" id="three"><img src="images/image_3.jpg"/></li>
+				<li style="background: orange;" class="box" id="four"><img src="images/image_4.jpg"/></li>
+				<li style="background: blue;" class="box" id="five"><img src="images/image_5.jpg"/></li>
+				<li style="background: yellow;" class="box" id="six"><img src="images/image_6.jpg"/></li>
+				<li style="background: grey;" class="box" id="seven"><img src="images/image_7.jpg"/></li>
+				<li style="background: black;" class="box" id="eight"><img src="images/image_8.jpg"/></li>
+				<li style="background: pink;" class="box" id="nine"><img src="images/image_9.jpg"/></li>
+				<li style="background: cyan;" class="box" id="ten"><img src="images/image_10.jpg"/></li>
+			</ul>	
+		</div>
+		<script type="text/javascript">
+			document.getElementById("grid").addEventListener('mouseover', function(e){			
+				if(e.target.tagName == "IMG"){
+					var element = document.createElement("div");
+					element.className = "preview";
+					// position the div with respect to the mouse position
+					element.style.left = e.offsetX + 10 + "px";
+					element.style.top = e.offsetY + 10 + "px";
+					e.target.parentNode.appendChild(element);
+
+					var image = document.createElement("img");
+					image.src = e.target.src;
+					element.appendChild(image);
+					
+					e.target.addEventListener('mouseout', function handler(f){						
+						var node = f.target.parentNode.querySelector('div.preview');
+						node.parentNode.removeChild(node);	
+						e.target.removeEventListener('mouseout', handler, false);					
+					}, false);
+
+					e.target.addEventListener('mousemove', function(g){
+						element.style.left = g.offsetX + 10 + "px";
+						element.style.top = g.offsetY + 10 + "px";
+					}, false);				
+				}
+
+			}, false);
+		</script>
+	</body>
+</html>

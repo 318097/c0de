@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jquery Demo</title>
+		<style type="text/css">
+			.red{color: red;}
+			.green{color: green;}
+		</style>
+		<script src="frameworks/jquery/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.myLink').on('click', function(){
+					$('h1').slideUp(1000);
+				});
+
+				$('h1').on('mouseenter', function(){
+					$('h1').addClass('red');					
+				});
+			});
+		</script>
+	</head>
+	<body>
+	<h1>Welcome</h1>
+	<a href="#" class="myLink">Click</a>
+	</body>
+</html>

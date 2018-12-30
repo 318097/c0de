@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Smooth Scrolling</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			width: 600px;
+			background: #eee;
+			margin: 30px auto;
+			padding: 5px;
+		}
+		.nav{
+			padding: 5px;
+		}
+		a{
+			text-decoration: none;
+			color: #222;
+		}
+		.box{
+			box-sizing: border-box;
+			width: 100%;
+			height: 500px;
+			border: 4px solid #222;
+			margin-bottom: 10px;
+		}
+		.box h1{
+			text-align: center;
+			font-size: 40px;
+		}
+	</style>
+
+	<body>
+		<div class="container">
+			<div class="nav">
+				<a href="#" onclick="scroll('a1');">A1</a>
+				<a href="#" onclick="scroll('a2');">A2</a>
+				<a href="#" onclick="scroll('a3');">A3</a>
+				<a href="#" onclick="scroll('a4');">A4</a>
+			</div>
+
+			<div class="box" id="a1"><h1>A1</h1></div>			
+			<div class="box" id="a2"><h1>A2</h1></div>			
+			<div class="box" id="a3"><h1>A3</h1></div>			
+			<div class="box" id="a4"><h1>A4</h1></div>			
+		</div>
+		<script type="text/javascript">
+			var marginY = 0;
+			var speed = 30;
+			var scroller = null;
+			
+			function scroll(id){
+				marginY = 0;		
+				console.log("click");	
+				var destination = document.getElementById(id).offsetTop;
+				scroller = setInterval(function(){
+					marginY += speed;
+
+					if(marginY >= destination){
+						clearInterval(scroller);
+					}
+					window.scrollTo(0, marginY);
+				}, 10);
+			}
+		</script>
+	</body>
+</html>	

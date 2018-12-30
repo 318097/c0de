@@ -1,0 +1,56 @@
+<!-- transform-origin : the point from which to start the transformation -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Dropdown</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;  padding: 0;
+			width: 100%; height: 100%;
+			background: #444;
+			overflow: hidden;
+		}
+		#popup{
+			position: relative;
+			margin: 0 auto;
+			width: 350px;
+			height: 150px;
+			background: #FAB71E;
+			transform-origin: 2px 2px;
+			animation: drop 1s 1s both, swing 3s 2s forwards ease-out; 
+		}
+		#popup span{
+			position: absolute;
+			top: 5px;
+			left: 5px;
+		}
+		#popup h2{
+			margin-top: 50px;
+			text-align: center;
+		}
+		@keyframes drop{
+			0%{ top: -200px; opacity: 0; }
+			50%{ top: 40%; opacity: 0.3; }
+			75%{ top: 30%; opacity: 0.7; }
+			100%{ top: 40%; opacity: 1.0; }
+		}
+		@keyframes swing{
+			0%{ transform: rotate(0deg);}
+			20%{ transform: rotate(110deg);}
+			60%{ transform: rotate(50deg);}
+			100%{ transform: rotate(80deg); }
+		}
+	</style>
+	<body>
+		<div id="popup">
+			<span>X</span>
+			<h2>Welcome</h2>
+		</div>	
+		<script type="text/javascript"></script>
+	</body>
+</html>

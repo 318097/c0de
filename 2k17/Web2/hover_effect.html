@@ -1,0 +1,44 @@
+<!-- Fill Text Effect On Hover - Css3 Hover Effect - Pure Html Css Tutorials -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hover Effect</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+		}
+		.container{
+			margin: 0;
+			padding: 0;
+			background: #eee;
+		}
+		#text{
+			font-size: 70px;
+			position: absolute;
+			top: 35%;
+			left: 35%;
+			display: inline-block;
+		}
+		#text:before{
+			content: attr(data-text);
+			font-size: 70px;
+			display: inline-block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			color: green;
+			width: 0%;
+			overflow: hidden;
+			transition: all 0.5s;
+		}
+		#text:hover:before{
+			width: 100%;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<h1 id="text" data-text="Helloooooo...">Helloooooo...</h1>
+		</div>
+	</body>
+</html>

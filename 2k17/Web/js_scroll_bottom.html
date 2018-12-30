@@ -1,0 +1,29 @@
+<!-- program to detect bottom of the page -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS Scroll Bottom</title>
+		<style type="text/css">
+			div{
+				height: 100vh;
+				width: 100vw;
+				margin-top: 20px;
+				background: #eee;
+				border: 5px solid black;
+			}
+		</style>
+	</head>
+	<body>
+		<div></div>
+		<div></div>
+		<script type="text/javascript">
+			window.onscroll = function(ev) {
+			    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+			        // you're at the bottom of the page
+			        console.log("bottom");
+			    }
+			};	
+
+		</script>
+	</body>
+</html>

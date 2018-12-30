@@ -1,0 +1,76 @@
+<!-- styling practice for iWish yourproducts.html page -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>iWish Design</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		.container{
+			max-width: 400px;
+			background: #eee;
+			margin: 30px auto;
+			position: relative;
+		}
+		.container::after{
+			content: '';
+			display: block;
+			clear: both;
+		}
+		.left, .right{
+			float: left;
+			padding: 0;
+			margin: 0;
+		}
+		.left{
+			width: 80%;
+		}
+		span{
+			margin: 0;
+			padding: 0;
+		}
+
+		.right{
+			width: 20%;
+		}
+		.right div{
+			text-align: left;
+		}
+		button{
+			margin: 0;
+			padding: 0;
+			background: none;
+			border: none;
+			display: block;
+			width: 100%;
+			text-align: left;
+		}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+	<body>
+		<div class="container">
+			<div class="left">
+				<div style="padding: 5px;">
+					<span>Oneplus One</span>
+					<span>31 Sept, 17</span>					
+				</div>
+				<div style="padding: 5px">
+					<span style="padding: 5px; background: #f7f7f7">Rs/- 18,000</span>			
+					<span>1 unit(s)</span>			
+				</div>
+			</div>
+
+			<div class="right">
+				<div>0 bid(s)</div>	
+				<button>Edit</button>
+				<button>Delete</button>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>XML Test</title>
+	</head>
+	<body>
+		<div id="output"></div>
+		<script type="text/javascript">
+			var xhr = new XMLHttpRequest();
+			if(xhr){
+				xhr.onreadystatechange = function(){
+					if(xhr.status == 200 && xhr.readyState == 4){
+						var data = xhr.responseXML;
+						console.log(data);
+						var dom = document.getElementById('output');
+
+						dom.innerHTML = "<p>" + data.getElementsByTagName("title")[0].childNodes[0].nodeValue + "</p>";
+						dom.innerHTML += "<p>" + data.getElementsByTagName("title")[0].childNodes[0].length + "</p>";
+					}
+				};
+
+				xhr.open('GET', 'data.xml');
+				xhr.send();
+			}
+		</script>
+	</body>
+</html>

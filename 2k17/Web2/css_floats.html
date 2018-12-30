@@ -1,0 +1,52 @@
+<!-- centering divs using floats -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Floats</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			width: 600px;
+			height: 500px;
+			background: #eee;
+			margin: 30px auto;
+		}
+		.box{
+			height: 100px;
+			float: left;
+			width: 29.33%;
+			margin: 1%;
+			padding: 1%;
+		}
+		#box1{
+			background: blue;
+		}
+		#box1::after{
+			content: '';
+			clear: both;
+			display: block;
+		}
+		#box2{
+			background: purple;
+		}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+	<body>
+		<div class="container">
+			<div id="box1">
+				<div class="box" style="background: #123456"></div>
+				<div class="box" style="background: #789012"></div>
+				<div class="box" style="background: #070797"></div>
+				<div class="box" style="background: #abca5a"></div>
+				<div class="box" style="background: #ababab"></div>
+			</div>
+			<div id="box2">Hello world, how are you.</div>
+		</div>
+	</body>
+</html>

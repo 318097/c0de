@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Validations</title>
+		<script type="text/javascript">
+			function validate_input(){
+				var input = "abfasfsc";
+				var pattern = /fas/;
+				var pattern2 = /[a b c]/;
+				if(input == ""){
+					console.log("Empty");
+				}
+				if(input.length > 5){
+					console.log("Too long");
+				}
+				if(pattern.test(input)){ // test() returns true or false.
+					console.log("Match Found");
+				}
+				if(pattern2.test(input)){ // test() returns true or false.
+					console.log("Match Found");
+				}
+			}
+			validate_input();
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Form Animation</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;  padding: 0;
+			width: 100%; height: 100%;
+		}
+		body{
+			background: #eee;
+		}
+		#form{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			padding: 20px;
+			background: #222;
+			width: 400px;
+		}
+		#form div{
+			margin: 25px 10px;
+			position: relative;
+		}
+		#form div input,
+		#form div textarea{
+			width: 100%;
+			outline: none;
+			border: none;
+			background: #eee;
+			padding: 10px;
+		}
+		#form div label{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			transition: all 0.5s;
+		}
+		#form div input:focus + label,
+		#form div textarea:focus + label
+		{
+			top: -20px;
+			left: 0px;
+			color: #eee;
+		}
+		#form div input:valid + label,
+		#form div textarea:valid + label
+		{
+			background: green;
+			top: -20px;
+			left: 0px;
+			color: #eee;
+		}
+		#form div input:invalid + label,
+		#form div textarea:invalid + label
+		{
+			background: red;
+		}
+	</style>
+	<body>
+		<div id="form">
+			<div>
+				<input type="text" name="name" id="name" required />
+				<label for="name">Name</label>
+			</div>
+			<div>
+				<input type="text" name="mobile" id="mobile"  required />
+				<label for="mobile">Mobile</label>
+			</div>
+			<div>
+				<input type="email" name="email" id="email" required />
+				<label for="email">Email</label>
+			</div>
+			<div>
+				<textarea name="message" id="message" rows="8" required></textarea>
+				<label for="message">Message</label>
+			</div>
+
+			<div>
+				<input type="submit" name="submit" value="Submit" />
+			</div>
+		</div>
+	</body>
+</html>

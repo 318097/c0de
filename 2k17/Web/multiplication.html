@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Multiplication</title>		
+	</head>
+	<body>
+		<h1>Multiplication</h1>
+		<div id="target">		
+		</div>
+		<script type="text/javascript">
+			var x = prompt("Enter the number:");		
+			var dom = document.getElementById('target');
+			var msg = "";
+			var product;
+			for(var i = 0; i <= 25; i++){				
+				product = x * i;
+				msg += x + " * " + i + " = " + product;
+				msg += "<br/>";
+			}
+			dom.innerHTML = "<p>" + msg + "</p>";
+		</script>
+	</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Circle Animation</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#myCanvas{
+				display: block;
+				margin: 0 auto;
+				background: #001111;
+			}
+		</style>
+	</head>	
+	<body>
+		<canvas id="myCanvas" width="800px" height="350px"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+
+			var ballColor = "#eee"
+			var ballRadius = 30;
+			var dx = +1;
+			var dy = -1;
+
+			var x;
+			var y;
+
+			var circles = [];
+			for(i=0;i<5;i++){	
+				circles[i] = {x:((i*100)%canvas.width),
+					y:((i*200)%canvas.height)};
+			}	
+			function drawBall(){
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				for(i=0;i<5;i++){	
+					ctx.beginPath();
+					ctx.arc(circles[i].x,circles[i].y,ballRadius,0,Math.PI*2);
+					ctx.fillStyle = ballColor;
+					ctx.fill();
+					ctx.closePath();
+					if(circles[i].x+dx > canvas.width - ballRadius || circles[i].x+dx < 0){
+						dx = -dx;
+					}
+					if(circles[i].y+dy > canvas.height - ballRadius || circles[i].y+dy < 0){
+						dy = -dy;
+					}
+					circles[i].x += dx;
+					circles[i].y += dy;
+				}
+			}
+			setInterval(drawBall,20);
+		</script>
+	</body>
+</html>

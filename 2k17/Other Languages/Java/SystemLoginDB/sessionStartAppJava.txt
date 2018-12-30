@@ -1,0 +1,35 @@
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.io.*;
+
+public class SessionStart {
+	public static void main(String[] args) {
+		try{
+			String userName=System.getProperty("user.name");
+			Date d=new Date();
+			SimpleDateFormat ft=new SimpleDateFormat("hh:mm:ss a '-' dd.MM.yyyy");
+			String strtSession=ft.format(d);
+			
+			if(userName.equalsIgnoreCase("mehul")){
+				Process p = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler homeLogin.txt");
+				Process q = Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler myLogin.txt");
+				
+				Thread.sleep(5000);
+				
+				FileWriter f1=new FileWriter("myLogin.txt");
+				f1.write("Your Last Login was: "+strtSession+"     ");
+				f1.close();
+				
+			}
+			
+			else if(userName.equalsIgnoreCase("home")){			
+				FileWriter f2=new FileWriter("homeLogin.txt",true);
+				f2.write(strtSession+"     ");
+				f2.close();
+			}			
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+}

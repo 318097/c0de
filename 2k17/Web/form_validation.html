@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>	Form Validation</title>
+		<style>
+			body{
+				width: 100%;
+				font: 18px monospace;
+			}
+			#container{
+				background: #9B40EC;				
+				display: block;
+			}				
+			label{
+				background-color: green;
+				display: inline-block;
+				width: 150px;
+				font-weight: bold;
+				border: none;
+				padding: 5px 7px;
+			}
+			input{
+				background-color:yellow;
+				display: inline-block;
+				width: 200px;	
+				border: none;
+				padding: 5px 7px;
+				font: 18px monospace;		
+			}
+			input[type=submit], input[type=reset]{
+				font-weight: bolder;				
+			}
+		</style>
+		<script type="text/javascript">
+			function validate(){
+				var name = document.getElementById("name");
+				var name_pattern = /^[A-Za-z]+$/;
+				var pos = name.value.search(name_pattern);
+				if(pos!=0){
+					name.focus();					
+					return false;
+				}
+
+				var oldp = document.getElementById("old_pwd");
+				var newp = document.getElementById("new_pwd");			
+				if(oldp.value==""){
+					oldp.focus();
+				}
+				if(oldp.value!=newp.value){
+					oldp.select();
+					oldp.focus();
+					return false;
+				}
+				else 
+					return true;
+			}
+		</script>
+	</head>
+
+	<body>
+		<div id="container">
+			<form action="" onsubmit="return validate();">
+				<label for="name">Username:</label>
+				<input type="text" name="name" id="name"/>				
+				
+				<br/><br/>
+
+				<label for="old_pwd">Old Password:</label>
+				<input type="password" id="old_pwd" name="old_pwd"/>			
+
+				<br/><br/>
+
+				<label for="new_pwd">New Password:</label>
+				<input type="password" id="new_pwd" name="new_pwd" onblur="validate();"/>		
+
+				<br/><br/>
+
+				<input type="submit" value="Validate"/>
+				<br/>
+				<input type="reset" value="Clear"/>
+			</form>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+	<head>
+		<title>My simple animation</title>
+		<style type="text/css" rel="stylesheet">
+			#menu{
+				padding: 10px;
+				background: #AAB3BC;
+			}
+			#content{
+				background: #508DC4;
+			}
+			#box{
+				background: black;
+				font: 40px monospace;
+				color: #1F57E2;  
+			}
+			input[type=button]{
+				padding: 7px 10px;
+				background: #1B9531;
+				border: none;
+				margin: 3px;
+				font-weight: bold;
+				font-size: 15px;
+			}
+		</style>
+		<script type="text/javascript">
+			function cross_animation(){
+				var dom = document.getElementById("box").style;
+				var x = parseInt(dom.left);	
+				var y = parseInt(dom.top);
+
+				x += 40;
+				y += 40;
+				
+				if(dom.color=="#1F57E2")
+					dom.color="#192034";
+				else
+					dom.color="#1F57E2";
+				
+				dom.top = y+"px";
+				dom.left = x+"px";				
+			}
+			function slide_animation(){
+				var dom = document.getElementById("box").style;
+				var x = parseInt(dom.left);
+				x += 40;
+				
+				if(dom.color=="#1F57E2")
+					dom.color="#192034";
+				else
+					dom.color="#1F57E2";
+				
+				dom.left = x+"px";		
+			}
+			function fade_animation(){
+				var dom = document.getElementById("box").style;
+				var opacity = dom.opacity;
+				dom.opacity = opacity;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div id="container">
+			<div id="menu">
+				<input type="button" value="cross" id="cross_button"/>
+				<input type="button" value="slide" id="slide_button"/>
+				<input type="button" value="fade" id="fade_button"/>		
+			</div>		
+			<div id="content">
+				<div id="box" style="position: absolute;top: 100px;left: 100px;">
+					Mehul Lakhanpal
+				</div>
+			</div>
+		</div>		
+
+		<script type="text/javascript">
+		// diagonal animation
+			var cross_status = false;
+			var cross_handle;
+			document.getElementById("cross_button").onclick = function(){
+				if(!cross_status){
+					cross_handle = setInterval(cross_animation, 500);
+					cross_status = true;
+					document.getElementById("cross_button").style.backgroundColor = "#E01F1F";
+				}else{
+					clearInterval(cross_handle);
+					cross_status = false;
+					document.getElementById("cross_button").style.backgroundColor = "#1B9531";
+				}
+			};
+
+		// slide animation
+			var slide_status = false;
+			var slide_handle;
+			document.getElementById("slide_button").onclick = function(){
+				if(!slide_status){
+					slide_handle = setInterval(slide_animation, 500);
+					slide_status = true;
+					document.getElementById("slide_button").style.backgroundColor = "#E01F1F";
+				}else{
+					clearInterval(slide_handle);
+					slide_status = false;
+					document.getElementById("slide_button").style.backgroundColor = "#1B9531";
+				}
+			};
+
+		// fade animation
+			var fade_status = false;
+			var fade_handle;
+			document.getElementById("fade_button").onclick = function(){			
+					fade_animation();					
+				};
+		
+		</script>
+	</body>
+</html>

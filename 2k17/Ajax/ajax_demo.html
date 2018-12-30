@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>Ajax Demo</title>
+	</head>
+	
+	<body>
+		<h1>Ajax Application</h1>
+		<script>			
+			function getData(dataSource)
+			{				
+				var XHRObj=false;
+				var obj=document.getElementById("targetDiv");
+				if(window.XMLHttpRequest){
+					XHRObj=new XMLHttpRequest();
+				}else if(window.ActiveXObject){
+					XHRObj=new ActiveXObject("Microsoft.XMLHTTP");
+				}
+
+				XHRObj.addEventListener('progress', function(evt){
+					if(evt.lengthComputable) {
+			            var percentComplete = evt.loaded / evt.total;
+			            console.log(percentComplete);
+			        }
+				});
+
+				XHRObj.addEventListener('load', function(evt){
+					console.log("Download Complete.");
+				});
+
+				if(XHRObj)
+				{
+					XHRObj.open("GET",dataSource,true);
+					XHRObj.onreadystatechange=function(){
+						if(XHRObj.readyState==4 && XHRObj.status==200){
+							obj.innerHTML=XHRObj.responseText;
+						}
+					}
+					XHRObj.send(null);
+				}
+			}
+		</script>
+		<input type="button" onclick="getData('ajax_demo_response.php')" value="click"/>	
+		<div id="targetDiv"> Your Text will appear here !! </div>
+	</body>
+</html>
+		

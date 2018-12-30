@@ -1,0 +1,12 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="frameworks/bootstrap/css/bootstrap.css"/>		
+		<script src="frameworks/jquery/jquery.js"></script>		
+		<script src="frameworks/bootstrap/js/bootstrap.js"></script>	
+	</head>	
+	<body>
+		<div id="container"></div>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+	<head>
+		<title>
+			Google suggests using AJAX
+		</title>
+		<style type="text/css">
+
+		</style>
+		<script type="text/javascript">
+			function askGoogleSuggest(){
+				var input = document.getElementById("keyword");
+				if(input.value){
+					getData("google.php?q=" + input.value);
+				}
+				else{
+					document.getElementById("targetDIV").innerHTML = "";
+				}
+			}
+			function getData(url){
+				var XHR = false;
+				if(window.XMLHttpRequest){
+					XHR = new XMLHttpRequest();
+				}
+				if(XHR){
+					XHR.open("GET",url);
+					XHR.onreadystatechange = function(){
+						if(XHR.readyState == 4 && XHR.status == 200){
+							var text = XHR.responseText.replace("window.google.ac.Suggest_apply","callback");
+							eval(text);
+						}
+					}
+					XHR.send(null);
+				}
+			}
+			function callback(unusedVariable, searchTerm, arrayTerm, unusedArray){
+				var data = "<table>";
+				var loopIndex;
+
+				for (loopIndex = 1;loopIndex < arrayTerm.length;loopIndex++) {
+					data += "<tr><td>";
+					data += "<a href='http://www.google.com/search?q=" + arrayTerm[loopIndex] + "'>";
+					data += arrayTerm[loopIndex] + "</a></td><td>";
+					data += arrayTerm[++loopIndex];
+					data += "</td></tr>";
+				}
+				data += "</table>";
+
+				var target = document.getElementById('targetDIV');
+				target.innerHTML = data;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div>
+			<label for="keyword">Search for: </label>
+			<input type="textbox" name="keyword" id="keyword" onkeyup="askGoogleSuggest();" />
+		</div>		
+		<div id="targetDIV"></div>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<title>Copying using JS</title>
+		<script type="text/javascript">
+			function copyText(){
+				document.execCommand('copy');
+				document.getElementById('container').style.background = "blue";
+			}
+		</script>
+	</head>	
+	<body>
+		<div id="container">
+			<div onclick="copyText();"> Hahahaha</div>
+		</div>
+	</body>
+</html>

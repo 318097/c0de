@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jquery Datepicker</title>
+		<style type="text/css">
+			*{
+				font-family: monospace;
+				font-size: 16px
+			}
+			.container{
+				width: 600px;
+				height: 500px;
+				background: #eee;
+				margin: 30px auto;
+			}
+		</style>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>      
+      	<script>	
+			$(document).ready(function(){
+				$( "#datepicker" ).datepicker({});
+			    $("#button").click(function(){ 
+			    	$("#datepicker").datepicker("show");	    	
+			    });
+			});	
+	    	 
+		    function printt(){
+		    	console.log(document.getElementById("datepicker").value);
+		    }
+		</script>		
+	</head>
+		
+	<body>
+		<div class="container">
+			<input type="hidden" id="datepicker" onchange="printt();">
+			<div id="button">click</div>		
+		</div>				
+	</body>
+</html>

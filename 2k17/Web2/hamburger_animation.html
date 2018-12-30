@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Hamburger Animation</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			width: 600px;
+			height: 500px;
+			background: #eee;
+			margin: 30px auto;
+		}
+		#hamburger-container{
+			background: #222;
+			width: 75px;
+			height: 50px;
+			margin: 100px auto;
+			padding: 2px;
+		}
+		#hamburger-container span{
+			width: 100%;
+			display: block;
+			background: #123456;
+			height: 10px;
+			margin-bottom: 3px;
+			transition: all 0.7s ease-in-out;
+			position: relative;
+			top: 0;
+		}
+		#hamburger-container.animate span{
+			background: #47c;
+		}
+		#hamburger-container.animate span:nth-child(2),
+		#hamburger-container.animate span:nth-child(3){
+			width: 0;
+		}
+		#hamburger-container.animate span:nth-child(1){
+			transform: rotate(405deg);
+			top: 20px;
+		}
+		#hamburger-container.animate span:nth-child(4){
+			transform: rotate(-405deg);
+			top: -20px;
+		}
+	</style>
+	
+	<body>
+		<div class="container">
+			<div id="hamburger-container">
+				<span class="lines">&nbsp;</span>
+				<span class="lines">&nbsp;</span>
+				<span class="lines">&nbsp;</span>
+				<span class="lines">&nbsp;</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var flag = 1;
+			var dom = document.getElementById('hamburger-container');
+			dom.addEventListener('click', function(){
+				console.log("check");
+				if(flag == 1){
+					dom.className = "animate";
+					flag = 0;
+				}
+				else{
+					dom.className = "";
+					flag = 1;
+				}
+			});
+		</script>
+	</body>
+</html>

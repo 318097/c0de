@@ -1,0 +1,116 @@
+<html>
+	<head>
+		<title>Bootstrap Demo 2</title>
+		<link rel="stylesheet" href="frameworks/bootstrap/css/bootstrap.css"/>		
+		<script src="frameworks/jquery/jquery.js"></script>		
+		<script src="frameworks/bootstrap/js/bootstrap.js"></script>	
+	</head>	
+	<body>
+		<div class="container-fluid">
+			<a href="#">Messages <span class="badge">5</span></a>
+			<button class="btn btn-primary">Notification <span class="badge">5</span></button>
+
+			<div class="page-header">
+				<h3>Downloads <span class="label label-default">Beta</span></h3>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h4>Panel Header</h4>
+				</div>
+				<div class="panel-body">
+					This is the panel body.
+				</div>
+				<div class="panel-footer">
+					Panel Footer
+				</div>
+			</div>
+
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h4>Panel Header</h4>
+				</div>
+				<div class="panel-body">
+					This is the panel body.
+				</div>
+				<div class="panel-footer">
+					Panel Footer
+				</div>
+			</div>
+
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h4>Panel Header</h4>
+				</div>
+				<div class="panel-body">
+					This is the panel body.
+				</div>
+				<div class="panel-footer">
+					Panel Footer
+				</div>
+			</div>
+			<!-- The element is shown by default. (because of the ".in" class) -->
+			<button class="btn btn-success" data-target="#cla1" data-toggle="collapse">Click</button>
+			<div id="cla1" class="collapse in">This is the collapsible element.</div><br/>
+
+			<button class="btn btn-success" data-target="#cla2" data-toggle="collapse">Click</button>
+			<div id="cla2" class="collapse">This is the collapsible element.</div><br/>
+
+			<a href="#cla3" data-toggle="collapse">Click the link to collapse</a>
+			<div id="cla3" class="collapse">The new data is here.</div><br/>
+
+			<ul class="list-group">
+				<li class="list-group-item">List Item</li>
+				<li class="list-group-item">List Item</li>
+				<li class="list-group-item">List Item</li>
+				<li class="list-group-item">List Item</li>
+			</ul>
+
+			<div class="list-group">
+				<a href="#" class="list-group-item">List Item in links</a>
+				<a href="#" class="list-group-item">List Item in links</a>
+				<a href="#" class="list-group-item">List Item in links</a>
+				<a href="#" class="list-group-item">List Item in links</a>
+			</div>
+
+			<ul class="list-inline">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Software</a></li>
+				<li><a href="#">Technology</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+
+			<!-- active class indicates that the tab is active -->
+			<ul class="nav nav-tabs">
+				<li><a href="#">Home</a></li>
+				<li class="active"><a href="#">Software</a></li>
+				<li><a href="#">Technology</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+
+			<!-- navigation with dropdown -->
+			<ul class="nav nav-tabs">
+				<li><a href="#">Home</a></li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Software</a>
+					<ul class="dropdown-menu">
+						<li><a href="">Programming</a></li>
+						<li><a href="">Scripting</a></li>
+						<li><a href="">Server Side</a></li>
+						<li><a href="">Client Side</a></li>
+					</ul>
+				</li>
+				<li><a href="#">Technology</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>
+
+			<ul class="nav nav-pills">
+				<li><a href="#">Home</a></li>
+				<li class="active"><a href="#">Software</a></li>
+				<li><a href="#">Technology</a></li>
+				<li><a href="#">Contact Us</a></li>
+			</ul>				
+			
+		</div>
+	</body>
+</html>

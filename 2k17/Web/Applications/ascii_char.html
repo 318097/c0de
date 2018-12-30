@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ASCII - Character</title>
+		<style type="text/css">
+			*{
+				font: 18px monospace; 
+			}
+			body{
+				background: #F9F6F6;
+			}
+			div{
+				display: block;
+				margin: 0 auto;
+				width: 500px;
+			}
+			input{
+				border: none;
+				border-bottom: 1px solid;
+				padding: 12px 7px;
+				margin: 5px;
+				width: 100%;
+				font-weight: bold;
+			}			
+		</style>
+		<script type="text/javascript">			
+			// A-65 , Z-90, a-97, z-122
+			function toChar(event){
+				var ascii = document.getElementById('ascii_box');
+				var cha = document.getElementById('char_box');						
+				cha.value = String.fromCharCode(ascii.value);	
+				ascii.select();								
+			}
+			function toAscii(event){
+				var cha = document.getElementById('char_box');
+				var ascii = document.getElementById('ascii_box');
+				ascii.value = event.keyCode;	
+				cha.select();									
+			}				
+		</script>
+	</head>
+	<body>
+		<div>
+			<input type="text" name="ascii_box" id="ascii_box" onkeyup="toChar(event);" placeholder="ASCII value" style="background:#F3E1E1;"/>
+			<br/><br/>
+			<input type="text" name="char_box" id="char_box" onkeyup="toAscii(event);" placeholder="Character" style=" background:#E21616;"/>
+		</div>	
+	</body>
+</html>

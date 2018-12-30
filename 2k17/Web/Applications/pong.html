@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pong</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+
+			#myCanvas{
+				display: block;
+				margin: 0 auto;
+				background: #7C7C79	;
+			}
+		</style>
+	<head>
+	<body>
+		<canvas id="myCanvas" width="800px" height="350px"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('myCanvas');
+			var ctx = canvas.getContext('2d');
+
+
+			var ballRadius = 10;
+			var x = canvas.width/2; // x coordinate of the ball
+			var y = canvas.height/2; // y coordinate of the ball
+			var dx = +5; // speed & direction of the ball along x axis
+			var dy = -2; // speed & direction of the ball along y axis
+
+			var paddleWidth = 80;
+			var paddleHeight = 15;
+			var paddlePadding = 5;
+
+			// position of left paddle
+			var pad1X = paddlePadding;
+			var pad1Y = 100;
+			//position of right paddle
+			var pad2X = canvas.width-paddleHeight-paddlePadding;
+			var pad2Y = 100;
+
+			// left paddle control status (W & S key)
+			var paddle1Left = false;
+			var paddle1Right = false;
+			// right paddle control status (Up & Down key)
+			var paddle2Left = false;
+			var paddle2Right = false;
+
+			var score1 = 0;
+			var score2 = 0;
+
+			document.addEventListener("keydown",keyDownListener);
+			document.addEventListener("keyup",keyUpListener);
+
+			function keyDownListener(e){
+				if(e.keyCode == 87)
+					paddle1Left = true;
+				if(e.keyCode == 83)
+					paddle1Right = true;
+				if(e.keyCode == 40)
+					paddle2Left = true;
+				if(e.keyCode == 38)
+					paddle2Right = true;
+			}
+			function keyUpListener(e){
+				if(e.keyCode == 87)
+					paddle1Left = false;
+				if(e.keyCode == 83)
+					paddle1Right = false;
+				if(e.keyCode == 40)
+					paddle2Left = false;
+				if(e.keyCode == 38)
+					paddle2Right = false;
+			}
+			function drawBall(){
+				ctx.beginPath();
+				ctx.arc(x,y,ballRadius,0,Math.PI*2);
+				ctx.fillStyle = "#F6F906";
+				ctx.fill();
+				ctx.closePath();
+			}
+			// Left paddle
+			function drawPaddle1(){
+				ctx.beginPath();
+				ctx.rect(pad1X,pad1Y,paddleHeight,paddleWidth);
+				ctx.fillStyle = "#62BCCD";
+				ctx.fill();
+				ctx.closePath();
+			}
+			// Right paddle
+			function drawPaddle2(){
+				ctx.beginPath();
+				ctx.rect(pad2X,pad2Y,paddleHeight,paddleWidth);
+				ctx.fillStyle = "#62BCCD";
+				ctx.fill();
+				ctx.closePath();
+			}
+			function drawScore(){
+				ctx.beginPath();
+				ctx.font = "16px Arial";
+				ctx.fillText("Score:"+score1, 0 + 10, 20);
+				ctx.fillText("Score:"+score2, canvas.width - 80, 20);
+				ctx.fillStyle = "#eee";
+				ctx.closePath();
+			}
+			function draw(){
+				ctx.clearRect(0,0,canvas.width,canvas.height);
+				drawBall();
+				drawPaddle1();
+				drawPaddle2();
+				drawScore();
+				// Collision Detection for left & right side of the canvas
+				if(x+dx > canvas.width - ballRadius){ // collision detection for right side
+					if(y > pad2Y && y < pad2Y + paddleWidth){
+						dx = -dx;	
+					}else{
+						score1++;
+						setTimeout(reset,2000);
+						x = y = 100;		
+					}		
+				}else if(x+dx < 0){ // collision detection for left side
+					if(y > pad1Y && y < pad1Y + paddleWidth){
+						dx = -dx;
+					}else{
+						score2++;
+						setTimeout(reset,2000);
+						x = y = 300;
+					}
+				}
+				// Collision Detection for top & bottom side of the canvas
+				if(y+dy > canvas.height - ballRadius || y+dy < 0){
+					dy = -dy;
+				}
+				x += dx;
+				y += dy;
+
+				// Movement of paddle1
+				if(paddle1Left && pad1Y > 0 + 3){
+					pad1Y -= 7;
+				}else if(paddle1Right && pad1Y < canvas.height - paddleWidth - 3){
+					pad1Y += 7;
+				}
+				// Movement of paddle2
+				if(paddle2Left && pad2Y < canvas.height - paddleWidth - 3){
+					pad2Y += 7;
+				}else if(paddle2Right && pad2Y > 0 + 3){
+					pad2Y -= 7;
+				}
+			}
+			function reset(){
+			}
+			setInterval(draw,10);
+		</script>
+	</body>
+</html>

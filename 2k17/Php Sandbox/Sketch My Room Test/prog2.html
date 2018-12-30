@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>	Program 2 </title>
+			<style type="text/css">
+				input[type=file]{
+					background-color:#D9D921;
+					width:35%;					
+					align:center;
+					padding:8px 10px;
+					margin:4px 0;
+					display:inline-block;
+					box-sizing: border-box;
+				}
+				input[type=submit]{
+					padding:8px 10px;
+					margin:4px 0;
+					background-color:#D9D921;
+				}
+				*{
+					font-size:18px;
+					font-weight:bold;
+					font-family:monospace;
+					background-color:#CFCFC2;
+					margin:25px;
+					padding-left:5px;	
+				}
+			</style>
+		</head>
+		
+		<body>
+			<div>
+				<div>
+					<p>
+						Upload file in a form which have multiple string as statement and then sort the string according to there length.<br/>
+						The result needs to be shown as plain html, additional css can be used, but the actual sorting logic should be in php only.
+					</p>
+				</div>
+				<div>
+					<form method="post" action="prog2.php" enctype="multipart/form-data">
+						<input type="file" name="txtFile"/><br/>
+						<input type="submit" value="Upload File"/>
+					</form>
+				</div>
+			</div>
+		</body>
+	</html>

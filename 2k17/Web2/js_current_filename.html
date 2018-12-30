@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			width: 600px;
+			height: 500px;
+			background: #eee;
+			margin: 30px auto;
+		}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+	<body>
+		<div id="container" class="container">
+			
+		</div>
+	<script type="text/javascript">
+		document.getElementById('container').innerHTML = window.location.pathname.split('/').pop();
+		
+	</script>
+	</body>
+</html>

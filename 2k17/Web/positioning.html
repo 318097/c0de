@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Positioning</title>
+		<style type="text/css">
+			body{
+				font-family: monospace;
+				font-weight: bold;
+				font-size: 18px;
+				background: black;
+			}
+			#container{
+				position: relative;
+				width: 500px;
+				height: 500px;
+				margin: 0 auto;
+				background: #eee;				
+			}
+			.box{				
+				background: #4488CC;
+				width: 100px;
+				height: 25px;				
+				text-align: center;	
+				color: white;
+			}
+			#box1{
+				position: absolute;
+				top: 50%;
+				right: 50px;
+			}
+			#box2{
+				position: relative;
+				top: 80px;				
+			}
+			#box3{			
+				position: static;
+			}
+			#box4{
+				position: fixed;
+				bottom: 0;
+				right: 0;				
+							
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="box1" class="box">ABSOLUTE</div>
+			<div id="box2" class="box">RELATIVE</div>
+			<div id="box3" class="box">STATIC</div>
+			<div id="box4" class="box">FIXED</div>
+		</div>
+	</body>
+</html>

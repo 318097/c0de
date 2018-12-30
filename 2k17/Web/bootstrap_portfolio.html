@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Bootstrap Portfolio</title>
+		<link rel="stylesheet" href="frameworks/bootstrap/css/bootstrap.css"/>		
+		<script src="frameworks/jquery/jquery.js"></script>		
+		<script src="frameworks/bootstrap/js/bootstrap.js"></script>	
+		<style type="text/css">
+			section{
+				width: 100vw;
+				height: 100vh;
+				padding: 50px;
+			}
+			img{
+				width: 300px;
+				height: 300px;
+				margin: 5px;
+				transition: opacity 3s;
+			}
+			img:hover{
+				opacity: 0.5;
+			}
+		</style>
+	</head>	
+	<body data-spy="scroll" data-target=".navbar">
+		<nav class="navbar navbar-inverse navbar-fixed-bottom">
+			<ul class="nav navbar-nav">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#work">Work</a></li>
+				<li><a href="#about">About Me</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+		<section class="white_text text-center" id="home" style="background: url(images/image_3.jpg); background-size: 100% 100%;">
+			<h2>My Portfolio</h2>
+			<p class="lead">Read about me.</p>
+			<button class="btn btn-default">Contact Me !!</button>
+		</section>
+
+		<section class="container" id="work">
+			<div class="page-header">
+				<h2 class="text-center">My Work</h2>
+			</div>
+			<img src="images/coder_1.jpg" class="img-thumbnail">
+			<img src="images/coder_4.jpg" class="img-thumbnail">
+			<img src="images/coder_1.jpg" class="img-thumbnail">
+			<img src="images/coder_4.jpg" class="img-thumbnail">
+		</section>
+		<section id="about" class="container">
+			<div class="page-header text-center">
+				<h2>About</h2>
+			</div>
+		</section>
+		<section id="contact">
+			<div class="page-header text-center">
+				<h2>Contact Me</h2>
+			</div>
+		</section>
+	</body>
+</html>

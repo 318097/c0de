@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Window Object</title>
+	<script type="text/javascript">
+		function start(){
+			// window.open("css_animation.html");	
+			var dom = document.getElementById("content");
+			dom.innerHTML = "innerHeignt : " + window.innerHeight + "<br/>";	
+			dom.innerHTML += "innerWidth : " + window.innerWidth + "<br/>";	
+
+			// window.screen object contains information about the user's screen.
+			dom.innerHTML += "screenWidth : " + window.screen.width + "<br/>";	
+			dom.innerHTML += "screenHeight : " + window.screen.height + "<br/>";	
+			dom.innerHTML += "screen.availWidth : " + window.screen.availWidth + "<br/>";	
+			dom.innerHTML += "screen.availHeight : " + window.screen.availHeight + "<br/>";	
+			dom.innerHTML += "screenColorDepth : " + window.screen.colorDepth + "<br/>";	
+			dom.innerHTML += "screenPixelDepth : " + window.screen.pixelDepth + "<br/>";	
+			dom.innerHTML += "locationHref : " + window.location.href + "<br/>";	
+			dom.innerHTML += "hostname : " + window.location.hostname + "<br/>";	
+			dom.innerHTML += "pathname : " + window.location.pathname + "<br/>";	
+		}
+	</script>
+</head>
+<body onload="start()">
+	<h3>JS Window Object Properties & methods</h3>
+	<div id="content"></div>
+</body>
+</html>

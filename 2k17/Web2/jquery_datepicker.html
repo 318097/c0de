@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jquery Datepicker</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			width: 600px;
+			height: 500px;
+			background: #eee;
+			margin: 30px auto;
+		}
+	</style>
+	<script type="text/javascript">
+		// $(document).ready(function() {
+		// 	var dateToday = new Date();
+		// 	$( "#datepicker" ).datepicker({            
+		// 		defaultDate: "0w",
+		// 		numberOfMonths: 1,
+		// 		showButtonPanel: true,
+		// 		minDate: dateToday,
+		// 		maxDate: '+1m'
+		// 	});     
+		// });
+ 
+		function getDate(){
+			var dateToday = new Date();		
+
+			$( "#datevalue" ).datepicker();
+			document.getElementById("datevalue").focus();	
+		}
+		function printDate(){
+			var date = document.getElementById("datevalue").value;
+		    console.log(date);
+		}
+	</script>
+	<body>
+		<div class="container">
+			<button id="datepicker" onclick="getDate();">Date</button>
+
+			<input type="text" id="datevalue" onchange="printDate();">
+		</div>
+	</body>
+</html>

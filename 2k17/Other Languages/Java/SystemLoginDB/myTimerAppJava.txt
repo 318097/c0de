@@ -1,0 +1,25 @@
+import java.util.*;
+import java.text.*;
+public class MyTimer {
+	public static void main(String[] args) {
+		try{
+			System.out.println(System.getProperty("user.name"));
+			Date d=new Date();
+			SimpleDateFormat ft=new SimpleDateFormat("hh:mm:ss a '-' dd.MM.yyyy");
+			long start=System.currentTimeMillis();
+			String strtSession=ft.format(d);
+			System.out.println("Start:"+strtSession);
+			
+			while(true){
+				Thread.sleep(5000);
+				long end=System.currentTimeMillis();
+				System.out.println("End:"+ft.format(new Date()));
+				long dif=end-start;
+				System.out.println("Difference:"+dif);
+			}
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+	}
+}

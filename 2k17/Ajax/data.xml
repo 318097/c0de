@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<article>
+		<title>
+			First post
+		</title>
+		<p>
+			Hello
+		</p>
+		<image>
+			image 1
+		</image>
+		<code>
+			var x = hi;
+			echo x;
+		</code>
+	</article>

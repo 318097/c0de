@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Modal Box</title>
+		<style type="text/css">
+			#container{
+				background: #97C8F9;
+				position: relative;
+				margin: 0 auto;
+				width: 100%;
+				height: 600px;		
+				padding: 0;
+				font-family: "kristen ITC";
+			}
+			#button{
+				display: block;
+				margin: auto;
+				font-size: 18px;
+				border: none;
+				padding: 7px;
+				background: #eee;
+				width: 100px;
+
+			}
+			.modal{
+				top: 25%;
+				left: 40%;				
+				position: absolute;
+				display: none;
+				width: 400px;
+				height: 200px;
+				background: #eee;
+				opacity: 0.4;
+				animation: modal-animate 0.5s;
+			}			
+			.modal-content{
+				padding: 5px;
+				opacity: 1;
+			}
+			.cross{
+				font-weight: bold;
+				float: right;
+			}
+			.cross:hover{
+				font-size: 110%;
+				cursor: pointer;
+			}
+			@keyframes modal-animate{
+				0%{
+					transform: rotate(0deg);
+				}
+				10%{
+					transform: rotate(36deg);
+				}
+				20%{
+					transform: rotate(72deg);
+				}
+				30%{
+					transform: rotate(108deg);
+				}
+				40%{
+					transform: rotate(144deg);
+				}
+				50%{
+					transform: rotate(180deg);
+				}
+				60%{
+					transform: rotate(216deg);
+				}
+				70%{
+					transform: rotate(252deg);
+				}
+				80%{
+					transform: rotate(288deg);
+				}
+				90%{
+					transform: rotate(324deg);
+				}
+				100%{
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div id="controls">
+				<input type="button" name="button" id="button" value="click" onclick="modalView(1);"/>
+			</div>
+
+			<div class="modal" id="modal">
+				<div class="modal-content">
+					<span class="cross" onclick="modalView(0);">&#10006;</span>
+					<br/>
+					<div>Hello World</div>
+				</div>				
+			</div>
+		</div>
+		<script type="text/javascript">
+			function modalView(status){
+				var dom = document.getElementById("modal");
+				if(status == 0){
+					dom.style.display = "none";
+				}else if(status == 1){
+					dom.style.display = "block";
+				}
+			}
+		</script>
+	</body>
+</html>

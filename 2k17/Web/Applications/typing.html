@@ -1,0 +1,49 @@
+<html>
+	<head>
+		<title>Dynamic Typing</title>
+		<style type="text/css">
+			*{
+				font: 18px monospace; 
+			}
+			body{
+				background: #F9F6F6;
+			}
+			div{
+				display: block;
+				margin: 0 auto;
+				width: 500px;
+			}
+			input{
+				border: none;
+				border-bottom: 1px solid;
+				padding: 12px 7px;
+				margin: 5px;
+				width: 100%;
+				font-weight: bold;
+			}			
+		</style>
+	</head>
+	
+	<body>	
+		<script type="text/javascript">
+			// A-65 , Z-90, a-97, z-122
+			function keyhandler(event){
+				var input = document.getElementById('input_box');
+				var output = document.getElementById('output_box');
+				if(event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode >= 90 && event.keyCode <= 122){ // A-Za-z is pressed					
+					var cipher = event.keyCode +1;					
+					output.value += String.fromCharCode(cipher);
+				}else if(event.keyCode == 32){ // space is pressed
+					output.value += " ";
+				}else if(event.keyCode == 8){ // backspace is pressed
+				
+				}						
+			}				
+		</script>	
+		<div>
+			<input type="text" name="input_box" id="input_box" onkeyup="keyhandler(event);" style="background:#F3E1E1;"/>
+			<br/><br/>
+			<input type="text" name="output_box" id="output_box" onfocus="blur();" style=" background:#E21616;"/>
+		</div>		
+	</body>
+</html>

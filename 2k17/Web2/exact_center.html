@@ -1,0 +1,38 @@
+<!-- how to properly center an element inside a container -->
+<!-- use :: transform: translate(-50%, -50%); -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exactly centering an element</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			background: #eee;
+			width: 600px;
+			height: 500px;			
+			margin: 30px auto;
+			position: relative;
+		}
+		#box{
+			background: #123456;
+			width: 100px;
+			height: 100px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+	<body>
+		<div class="container">
+			<div id="box"></div>
+		</div>
+	</body>
+</html>

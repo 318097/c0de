@@ -1,0 +1,85 @@
+<html>
+	<head>
+		<title>	Simple Animation </title>
+		<style>
+			div{
+				padding:10px;
+				font-size:20px;
+			}			
+			#div1{
+				background-color:red;
+				position:absolute;
+				left:100px;
+				top:100px;
+			}			
+			#div2{
+				visibility:visible;
+				background-color:blue;
+				position:absolute;
+				left:110px;
+				top:110px;
+			}			
+			#div3{
+				position:absolute;
+				font-size:30px;
+			}
+		</style>
+		<script type="text/javascript">
+			function moveIt(lft,tp){
+			var dom=document.getElementById("div1").style;
+			dom.left=lft+"px";
+			dom.top=tp+"px";
+			}
+			
+			function flip(){
+				var dom=document.getElementById("div2").style;
+				if(dom.visibility=="hidden"){
+					dom.visibility="visible";
+					document.getElementById("flip_button").value="hide";
+				}
+				else{
+					dom.visibility="hidden";
+					document.getElementById("flip_button").value="show";
+				}
+			}
+			
+			function color_change(c1,c2){
+				document.body.style.color=c1;
+				document.body.style.background=c2;
+			}
+			
+			function mouse_track(evt){
+				var dom=document.getElementById("mouse_pos");
+				dom.innerHTML=evt.clientX+"  "+evt.clientY;
+				var x=evt.clientX;
+				var y=evt.clientY;
+				document.getElementById("div3").style.left=x+"px";
+				document.getElementById("div3").style.top=y+"px";
+			}
+		</script>
+	</head>
+	
+	<body onclick="mouse_track(event);">
+		<div id="div1">
+			HTML,CSS & Javascript welcomes you
+		</div>
+		<div id="div2">
+			Hello World
+		</div>
+		<div id="div3">
+			MeHuL
+		</div>
+		<div id="mouse_pos">
+		</div>
+		<label>x coord:<input type="text" id="xcoord"/></label>
+		<label>y coord:<input type="text" id="ycoord"/></label>
+		<input type="button" value="Update" onclick="moveIt(document.getElementById('xcoord').value,document.getElementById('ycoord').value);"/>
+		<input type="button" value="hide" id="flip_button" onclick="flip();"/>
+		<br/>
+		<label>Color:<input type="text" id="color1"/></label>
+		<label>Bg-Color<input type="text" id="color2"/></label>
+		<input type="button" value="change color" onclick="color_change(document.getElementById('color1').value,document.getElementById('color2').value);"/>
+		<br/>
+		
+	</body>
+</html>

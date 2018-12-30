@@ -1,0 +1,27 @@
+<!-- Create element using DHTML and add it to the body on mouse hover -->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Javascript Practice</title>
+		<style type="text/css">
+			#my-div{
+				background: red;
+				display: inline-block;
+				width: 300px;
+				height: 20px;
+			}
+		</style>
+		<script type="text/javascript">
+			function dynamic_add(){
+				var element = document.createElement("div");
+				element.id = "my-div";
+				element.innerHTML = "hello";
+				document.body.appendChild(element);
+			}
+		</script>
+	</head>
+	<body>
+		<div onmouseover="dynamic_add();">Hello Everyone.</div>
+	</body>
+</html>

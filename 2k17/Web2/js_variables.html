@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>JS variable problems</title>
+	</head>
+	<script type="text/javascript">
+		// when a variable is redeclared as local variable, it overwrites the global variable
+		// the variable overwrites the global variable
+		var x = 10;
+		if(x > 5){
+			var x = 5;
+			console.log("inside: " + x); // it displays 5
+		}
+		console.log("outside: " + x); // here also it displays 5. it should be 10.
+		// the soultion is to use ES6 feature : "let"
+
+		let y = 10;
+		if(y > 5){
+			let y = 5;
+			console.log("inside: " + y); // it displays 5
+		}
+		console.log("outside: " + y); // now it displays  10.
+		// problem solved.
+	</script>
+	<body>
+		<div class="container">	
+		</div>
+	</body>
+</html>

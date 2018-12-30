@@ -1,0 +1,23 @@
+<html>
+<head>	<title>Fibonacci No</title></head>
+<body>
+<h1> Calculation of Fibonacci Number's</h1>
+<script type="text/javascript">
+var n,a=0,b=1,i
+n=prompt("Enter the No:","");
+if(n<=0)	alert("Invalid Input \n");
+else{
+	if(n==1)	document.write(a);
+	else
+		document.write(a+"<br />"+b);
+		for(i=2;i<=n;i++)
+		{
+			c=a+b;
+			a=b;
+			b=c;
+			document.write("<br />"+c)
+		}
+}
+</script>
+</body>
+</head>

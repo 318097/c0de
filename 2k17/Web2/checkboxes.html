@@ -1,0 +1,47 @@
+<!-- how to loop through all the checkbox elements -->
+<!-- used document.getElementsByName(); -->
+<!-- getting all the elements and displaying it
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Check boxes</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			width: 600px;
+			height: 500px;
+			background: #eee;
+			margin: 30px auto;
+		}
+	</style>	
+	<body>
+		<div class="container" id="check">
+			<input type="text" name="name"/><br/>
+			<input type="checkbox" name="color" value="blue"/>Blue <br/>
+			<input type="checkbox" name="color" value="red"/>Red <br/>
+			<input type="checkbox" name="color" value="green"/>Green <br/>
+			<input type="checkbox" name="color" value="yellow"/>Yellow <br/>
+			<button id="button">Click</button>
+			<hr/>
+			<div id="message"></div>
+		</div>
+
+		<script type="text/javascript">
+			document.getElementById('button').addEventListener('click', function(){
+				var colors = document.getElementsByName('color');
+				var output = '';
+				for(var i = 0; i < colors.length; i++){
+					if(colors[i].checked){
+						output += colors[i].value + '<br/>';
+					}
+				}
+				document.getElementById('message').innerHTML = output;
+			});
+		</script>
+	</body>
+</html>

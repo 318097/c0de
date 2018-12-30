@@ -1,0 +1,53 @@
+<html>
+	<head>
+		<title>
+			Div Animation
+		</title>
+		<style type="text/css" rel="stylesheet">	
+			#container{
+				width: 350px;
+				height: auto;
+				margin: 5px auto;
+				padding: 5px;
+				background: #eee;
+			}
+			.box{
+				width:100px;
+				height:100px;
+				border:1px solid #5C555C;
+				margin: 1px auto;				
+				display: inline-block;
+				animation: my-animation 5s;
+			}		
+			@keyframes my-animation{
+				0%{
+					transform: rotate(0deg);
+					width: 50px;
+					height: 50px;		
+				}
+				100%{
+					transform: rotate(360deg);
+					width: 100px;
+					height: 100px;		
+				}
+			}		
+		</style>
+		<script type="text/javascript">			
+		</script>
+	</head>
+	
+	<body>
+		<div id="container">
+			<div class="box" style="background: #4798E9" id="one"></div>
+			<div class="box" style="background: #DC4C35" id="two"></div>
+			<div class="box" style="background: #F9A60A" id="three"></div>
+			<div class="box" style="background: #32A91B" id="four"></div>
+			<div class="box" style="background: #0B6490" id="five"></div>
+			<div class="box" style="background: #0DCC44" id="six"></div>
+			<div class="box" style="background: #EBA308" id="seven"></div>
+			<div class="box" style="background: #646D1C" id="eight"></div>
+			<div class="box" style="background: #E6191D" id="nine"></div>
+			<div class="box" style="background: #9806E1" id="ten"></div>
+		</div>	
+	</body>
+</html>

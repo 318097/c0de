@@ -1,0 +1,28 @@
+<!-- disable a div element when it is clicked -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Disable Element</title>
+		<style type="text/css">
+			div{
+				background: red;
+				display: inline-block;
+				padding: 5px;
+				margin: 0 auto;
+			}
+		</style>
+		<script type="text/javascript">
+		function change(){
+			console.log('click');
+			alert('hi');
+			document.getElementById('element').style.background = 'blue';
+
+			if (document.getElementById('element').style.background = 'blue')
+				document.getElementById('element').onclick = false;
+		}		
+	</script>
+	</head>
+	<body>
+	<div onclick="change();" id="element">hello</div>	
+	</body>
+</html>

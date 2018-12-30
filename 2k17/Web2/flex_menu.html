@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Flex Box</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			width: 600px;
+			height: 500px;
+			background: #eee;
+			margin: 30px auto;
+		}
+		.box{
+			height: 100px;
+			min-width: 100px;			
+		}
+		nav ul{
+			list-style: none;
+			padding: 0;
+		}		
+		nav a{
+			text-decoration: none;
+			text-align: center;
+			color: #fff;
+			display: block;
+			padding: 10px;
+		}
+		nav a:hover{
+			background: #555;
+		}
+		@media screen and (min-width: 768px){
+			nav ul{
+				margin: 5px;
+				padding: 5px;
+				background: #fef;
+				justify-content: center; 
+				display: flex;
+			}
+			nav li{
+				/*flex: 1 1 0;*/
+			}
+		}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+	<body>
+		<div class="container">			
+			<nav>
+				<ul class="flex-container">
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Help</a></li>
+				</ul>
+			</nav>			
+		</div>
+	</body>
+</html>

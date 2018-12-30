@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>	Program 1 </title>
+			<style type="">				
+				p{
+					font-size:18px;
+					font-weight:bold;
+					font-family:Arial;
+					padding:2px;
+				}
+				input[type=text]{
+					width:25%;
+					border:none;					
+					padding: 8px 10px;
+					margin: 4px 0;
+					display: inline-block;
+					border-bottom: 1px solid #4B585A;
+					box-sizing: border-box;
+				}
+				input[type=submit],input[type=reset]{
+					
+					padding:4px 5px;
+					display:inline-block;
+					background-color:#818788;
+					border-sizing:border-box;
+				}
+				*{
+					font-size:18px;
+					font-weight:bold;
+					font-family:monospace;
+					background-color:#73AEBB;
+					margin:25px;
+					padding-left:5px;	
+				}
+				input:hover{
+					background-color:#8E9697;
+				}
+				input:focus{
+					background-color:#4A838C;
+				}
+			</style>
+			<script type="text/javascript">
+				
+				function testin(){
+					var dom=document.getElementById("number_entry");
+					var pattern=/^[0-9]+$/;
+					if(!dom.value.match(pattern)){
+						alert("Please Enter a Number");
+						dom.value=null;
+						dom.focus();
+					}
+				}
+			</script>
+		</head>
+		
+		<body>
+			<div class="main">
+				<div class="child">
+					<p>
+					Take four string or integer entry from form, where first entry is integer. <br/>
+					Square that integer and add that as suffix of each entry and print the output.
+					</p>
+				</div>
+				<div class="child">
+					<form method="post" action="prog1.php">
+						<label>Entry 1:
+						<input type="text" name="val1" id="number_entry" onchange="testin();"/></label>
+						
+						<br/><br/>
+						
+						<label>Entry 2:
+						<input type="text" name="val2"/></label>
+						<br/><br/>
+						
+						<label>Entry 3:
+						<input type="text" name="val3"/></label>
+						<br/><br/>
+						
+						<label>Entry 4:
+						<input type="text" name="val4"/></label>
+						<br/><br/>
+						
+						<input type="submit" value="Submit Entries"/>
+						<input type="reset" value="Clear Entries"/>
+					</form>
+				</div>
+			</div>
+		</body>
+	</html>

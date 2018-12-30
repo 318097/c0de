@@ -1,0 +1,48 @@
+<!-- pulse effect using css -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pulse Effect CSS</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		body{
+			background: #123456;
+		}
+		#pulse{
+			text-align: center;
+			font-size: 20px;
+			line-height: 100px;
+			color: #eee;
+			background: rgba(249, 149, 49, 1.0);
+			height: 100px;
+			width: 100px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			animation: animate 2.5s linear infinite; 
+		}
+		@keyframes animate{
+			0%{
+				box-shadow: 0px 0px 0px 0px rgba(249, 149, 49, 0.8);
+			}
+			50%{
+				box-shadow: 0px 0px 0px 20px rgba(249, 149, 49, 0.4);
+			}
+			100%{
+				box-shadow: 0px 0px 0px 40px rgba(249, 149, 49, 0);
+			}
+		}
+	</style>
+	<script type="text/javascript">
+		
+	</script>
+	<body>
+		<span id="pulse">PULSE</span>
+	</body>
+</html>

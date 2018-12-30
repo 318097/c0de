@@ -1,0 +1,27 @@
+<html>
+<head><title>USN Validation</title></head>
+<body bgcolor="blue">
+	<p align="center"><h1>USN Validation</h1></p>
+	<script type="text/javascript">
+		function func(usn)
+		{
+			var pattern=/^[1-4][a-z]{2}[0-9]{2}[a-z]{2}[0-9]{3}$/
+			if(!usn.value.match(pattern) || usn.value.length==0)
+			{
+				alert("USN Invalid");
+			}
+			else
+				alert("USN Valid");
+		}
+	</script>
+
+		<form action="">
+			<p align="center">
+			USN:<input type="text" name="usn"?>
+			<br/><br/>
+			<input type="submit" value="validate" onclick="func(usn)"/>
+			</p>
+		</form>
+</body>
+</html>
+	

@@ -1,0 +1,63 @@
+<!-- choose categories practice -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Checkbox for iwish</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px
+		}
+		.container{
+			background: #eee;
+			width: 80%;
+			height: 1000px;
+			margin: 0 auto;
+			padding: 10px;
+		}
+		input[type=checkbox]{
+			display: none;
+		}
+		input[type=checkbox]:checked + label {
+			background: #333;
+			transform: rotate(360deg);
+		}
+		label{
+			padding: 10px 20px;
+			width: 100px;
+			height: 100px;
+			display: inline-block;
+			text-align: center;
+			margin: 10px;
+			background: #666;
+			transition: all .9s;
+			transform: rotate(0deg);
+		}
+	</style>
+	<body>
+		<div class="container">
+			<div id="categories"></div>
+			<button onclick="updateCategories();">Update</button>
+		</div>
+		<script type="text/javascript">
+			var categories = ["cars", "bikes", "electronics", "mobile", "furniture", "toys"];
+			var dom = document.getElementById("categories");
+			var output = "";
+			for (var i = 0; i < categories.length; i++) {
+				output += "<input type='checkbox' class='checkbox' name='categories' id='check_" + i + "' value='" + categories[i] + "'>";
+				output += "<label for='check_" + i + "'>" + categories[i] + "</label>";
+			}
+			dom.innerHTML += output;
+
+			function updateCategories(){
+				var checked = document.querySelectorAll('.checkbox:checked');
+				var arr = [];
+				for(var i = 0; i < checked.length; i++){
+					arr.push(checked[i].value);
+				}
+				console.log(arr);				
+			}
+		</script>
+	</body>
+</html>

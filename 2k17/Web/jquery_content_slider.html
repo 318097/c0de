@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jquery Content Slider</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				font-family: monospace;
+				font-size: 15px;
+				color: #fff;
+				background: #333;
+				line-height: 1.6em;
+			}
+			a{
+				color: #fff;
+				text-decoration: none;
+			}
+			h1{
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			#container{
+				width: 80%;
+				height: 350px;
+				margin: 40px auto;
+				overflow: hidden;
+				position: relative;
+			}
+			#slider{
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+				overflow: hidden;
+				float: left;
+				padding: 3px;
+				border: 2px solid #666;
+				border-radius: 5px;
+			}
+			#slider img{
+				width: 100%;
+				height: 100%;
+				z-index: 0;
+			}
+			.slide{
+				position: absolute;
+			}
+			.slide-copy{
+				position: absolute;
+				top: 0px;
+				width: 100%;
+				color: #fff;
+				padding: 20px;
+				background: rgba(0, 0, 0, 0.5);
+				z-index: 5;
+			}
+
+
+			#prev, #next{
+				float: left;
+				margin-top: 130px;
+				cursor: pointer;
+				position: relative;
+				z-index: 100;
+			}
+			#prev{
+				margin-right: -45px;
+			}
+		</style>
+		<script src="frameworks/jquery/jquery.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var speed = 500;
+				var autoswitch = true;
+				var autoswitch_speed = 3000;
+
+
+				$('.slide').first().addClass('active');
+				$('.slide').hide();
+				$('.active').show();
+
+				$('#next').on('click', nextSlide);
+
+				if(autoswitch == true){
+					setInterval(nextSlide, autoswitch_speed);
+				}
+
+				function nextSlide(){
+					$('.active').removeClass('active').addClass('oldActive');
+					if($('.oldActive').is(':last-child')){
+						$('.slide').first().addClass('active');
+					} else{
+						$('.oldActive').next().addClass('active');
+					}
+					$('.oldActive').removeClass('oldActive');
+					$('.slide').fadeOut(speed);
+					$('.active').fadeIn(speed);
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				<h1>Jquery Content Slider</h1>
+			</header>
+
+			<div id="slider">
+				
+				<div class="slide">
+					<div class="slide-copy">
+						<h2>Slider One</h2>
+						<p>jfklads ilsj sijl fjaho alifjisdf jslifjlsfl lsijf slidjfjai sli jsli</p>
+					</div>
+					<img src="images/image_1.jpg">
+				</div>
+
+				<div class="slide">
+					<div class="slide-copy">
+						<h2>Slider Two</h2>
+						<p>jfklads ilsj sijl fjaho alifjisdf jslifjlsfl lsijf slidjfjai sli jsli</p>
+					</div>
+					<img src="images/image_2.jpg">
+				</div>
+
+				<div class="slide">
+					<div class="slide-copy">
+						<h2>Slider Three</h2>
+						<p>jfklads ilsj sijl fjaho alifjisdf jslifjlsfl lsijf slidjfjai sli jsli</p>
+					</div>
+					<img src="images/image_3.jpg">
+				</div>
+
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,16 @@
+<!-- redirect using javascript -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Links using Javascript</title>
+		<script type="text/javascript">
+			function changeLink() {
+				alert(window.location);
+				window.location = "hello.html?data=1";
+			}
+		</script>
+	</head>
+	<body>
+	<button onclick="changeLink();">click</button>
+	</body>
+</html>

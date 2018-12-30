@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CSS Transform</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;  padding: 0;
+			width: 100%; height: 100%;
+			background: #444;
+			overflow: hidden;
+		}
+		#popup{
+			position: relative;
+			margin: 0 auto;
+			width: 350px;
+			height: 150px;
+			background: #FAB71E;
+			transform-origin: 50% 50%;
+			animation: animate 1s 1s both; 
+			top: 40%;
+		}
+		#popup span{
+			position: absolute;
+			top: 5px;
+			left: 5px;
+		}
+		#popup h2{
+			margin-top: 100px;
+			text-align: center;
+		}
+		@keyframes animate{
+			0%{ opacity: 0; transform: rotate(0deg);}
+			100%{ opacity: 1.0; transform: rotate(360deg);}
+		}
+	</style>
+	<body>
+		<div id="popup">
+			<span>x</span>
+			<h2>Welcome</h2>
+		</div>	
+		<script type="text/javascript"></script>
+	</body>
+</html>

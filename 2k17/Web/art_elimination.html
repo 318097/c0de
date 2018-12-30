@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Art Elimination</title>
+	<style type="text/css">
+		body {
+		  background: #042029;
+		  font-family: 'Merriweather';
+		  color: #EAE3CB;
+		}
+		#art {
+		  width: 320px;
+		  margin: 0 auto;
+
+		}
+		#art h2 {
+		  font-family: 'Bree Serif';
+		  font-size: 2em;
+		  color: #A57706;
+		  margin-bottom: 0;
+		}
+		ul {
+		  margin: 0 auto;
+		  padding: 0;
+		}
+		ul li {
+		  list-style: none;
+		  display: inline-block;
+		  cursor: pointer;
+		}
+		ul li img {
+		  width: 100px;
+		  border: 1px solid #FCF4DC;
+		}
+		#art div{
+			background: #eee;
+			border: 1px solid black;
+			margin: 1px;
+			height: 100px;
+			width: 100px;
+			float: left;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="art">
+		<h2>Art Eliminator</h2>
+  		<p>Pick your favorite piece of art through the process of elimination. Click on the pieces you like the least until you are left with a single one. Click on the last image to get some info</p>
+		<ul class="grid">
+			<li><div style="background: green" id="one"></div></li>
+			<li><div style="background: red" id="two"></div></li>
+			<li><div style="background: yellow" id="three"></div></li>
+			<li><div style="background: blue" id="four"></div></li>
+			<li><div style="background: black" id="five"></div></li>
+			<li><div style="background: grey" id="six"></div></li>
+			<li><div style="background: pink" id="seven"></div></li>
+			<li><div style="background: purple" id="eight"></div></li>
+			<li><div style="background: orange" id="nine"></div></li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		document.querySelector(".grid").addEventListener('click', function(e){
+			console.log(e);
+			if(e.target.tagName === 'DIV'){
+				var howMany = this.querySelectorAll('li').length;
+				if(howMany > 1){
+					var removeTarget = e.target.parentNode;
+					removeTarget.parentNode.removeChild(removeTarget);
+				}else{
+					var text = e.target.id;
+					document.querySelector('#art p').innerHTML = "<p>You picked DIV No:" + text + "</p>";
+				}			
+			}
+		}, false);
+	</script>
+</body>
+</html>

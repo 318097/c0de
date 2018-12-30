@@ -1,0 +1,41 @@
+<!-- program to create a click dynamically and to navigate to a new address. -->
+<!DOCTYPE html>
+	<html>
+	<head>
+		<title>Using JS to click on cards</title>
+		<style type="text/css">
+			.card{
+				width: 250px;
+				height: 200px;
+				background: lightgreen;
+				display: inline-block;
+			}
+			img{
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<div class="container">
+			<div class="card">
+				<img src="images/image_1.jpg"//>
+				<div class="caption"><a id="link" href="welcome.html">Card Caption</a></div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			document.querySelector(".card").addEventListener('click', function(e){
+				// method 1 :
+				// change the address of the current page to a new address.
+				// disadvantage : reloads the page.
+				window.location.href = "welcome.html";
+
+				// method 2 :
+				// the click() creates a click event and navigates to the href of the <a> tag.
+				// document.getElementById("link").click();
+				console.log("check");
+			}, false);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,83 @@
+<html>
+	<head>
+		<title>Bootstrap Demo 4</title>
+		<link rel="stylesheet" href="frameworks/bootstrap/css/bootstrap.css"/>		
+		<script src="frameworks/jquery/jquery.js"></script>		
+		<script src="frameworks/bootstrap/js/bootstrap.js"></script>	
+	</head>	
+	<body>
+		<div class="container">
+			<!-- MODAL -->
+			<!-- data-toggle : which element is the button used for
+			data-target : the element which is the target of the button
+			data-dismiss : element that should be dismissed when clicked -->
+			<button class="btn btn-success" data-toggle="modal" data-target="#modal1">Click to view</button>
+
+			<div class="modal fade" id="modal1">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+						<button class="close" data-dismiss="modal">&times;</button>
+							<h4>Modal Header</h4>
+						</div>
+						<div class="modal-body">
+							<p>This is the modal body.</p>
+						</div>
+						<div class="modal-footer">
+							<button class="btn btn-default" data-dismiss="modal">Close</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- MODAL END -->
+
+			<div id="carousel1" class="carousel slide" data-ride="carousel" style="width: 500px; height: 400px;"> 
+				<ol class="carousel-indicators">
+					<li data-target="#carousel1" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel1" data-slide-to="1"></li>
+					<li data-target="#carousel1" data-slide-to="2"></li>						
+				</ol>
+
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="images/image_1.jpg" width="600px" height="500px;">
+						<div class="carousel-caption">
+							<h3>Image Header</h3>
+							<p>This is the first image caption</p>
+						</div>
+					</div>
+					<div class="item">
+						<img src="images/image_2.jpg" width="600px" height="500px;">
+					</div>
+					<div class="item">
+						<img src="images/image_3.jpg" width="600px" height="500px;">
+					</div>
+				</div>
+
+				<a href="#carousel1" class="left carousel-control" data-slide="prev">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				</a>
+				<a href="#carousel1" class="right carousel-control" data-slide="next">
+					<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				</a>
+			</div>
+
+			<a href="#" data-toggle="tooltip" data-placement="bottom" title="This is the tooltip">Click Here</a>
+			<button data-toggle="tooltip" data-placement="bottom" title="This is the tooltip" class="btn btn-success">Click Here</button>
+			<br/><br/>
+
+			<a href="#" data-toggle="popover" data-placement="left" title="Popover Heading" data-content="This is the popover content">Click Here</a>
+			<!-- data-trigger : focus
+			it means that the popover goes away when any other element is focused -->
+			<a href="#" data-toggle="popover" data-placement="left" data-trigger="focus" title="Popover Heading" data-content="This is the popover content">Click Here</a>
+
+			<a href="#" data-toggle="popover" data-placement="left" data-trigger="hover" title="Popover Heading" data-content="This is the popover content">Click Here</a>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip();
+				$('[data-toggle="popover"]').popover();
+			});
+		</script>
+	</body>
+</html>

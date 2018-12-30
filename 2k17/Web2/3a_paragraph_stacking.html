@@ -1,0 +1,70 @@
+<html>
+	<head>
+	<title>Paragraph Stacking</title>
+		<style type="text/css">
+			.style1{
+				background-color:red;
+				position:absolute;top:200px;left:400px;
+				padding:10px;
+				border:solid thin black;
+				height:100px;
+				width:500px;
+				padding:10px;
+				text-align:justify;
+				z-index:1;
+			}
+			.style2{
+				background-color:blue;
+				position:absolute;top:230px;left:430px;
+				padding:10px;
+				border:solid thin black;
+				height:100px;
+				width:500px;
+				padding:10px;
+				text-align:justify;
+				z-index:2;
+			}
+			.style3{
+				background-color:yellow;
+				position:absolute;top:260px;left:460px;
+				padding:10px;
+				border:solid thin black;
+				height:100px;
+				width:500px;
+				padding:10px;
+				text-align:justify;
+				z-index:3;
+			}
+		</style>
+	</head>
+
+	<body>
+		<center><h1>Paragraph Stacking</h1></center>
+		<script type="text/javascript">
+			var topLayerId="layer3";
+			function move(toTop)
+			{
+				var currentTopStyle=document.getElementById(topLayerId).style;
+				var newTopStyle=document.getElementById(toTop).style;
+				currentTopStyle.zIndex="0";
+				newTopStyle.zIndex="10";	
+				topLayerId=document.getElementById(toTop).id;
+			}
+		</script>
+		<div id="layer1" class="style1" onmouseover="move('layer1')">
+		Layer 1 ...
+		</div>
+
+		<div id="layer2" class="style2" onmouseover="move('layer2')">
+		Layer 2 ...
+		</div>
+
+		<div id="layer3" class="style3" onmouseover="move('layer3')">
+		Layer 3 ...
+		</div>
+
+	</body>
+</html>
+
+
+	

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Overflow Div content using AJAX</title>
+	</head>
+	<style type="text/css">
+		*{
+			font-family: monospace;
+			font-size: 16px;
+			box-sizing: border-box;
+		}
+		html, body{
+			margin: 0;  padding: 0;
+			width: 100%; height: 100%;
+		}
+		.container{
+			width: 100%; height: 100%;
+		}
+		.content{
+			min-height: 500px;
+			background: blue;
+		}
+		#box2{
+			max-width: 200px;
+			max-height: 200px;
+			background: yellow;
+			overflow: scroll;
+			/*position: relative;
+			right: 100px;*/
+		}
+		.footer{
+			background: red;
+			padding: 10px;
+			width: 100%;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<button onclick="getData()">Download</button>
+			<div class="content" id="content">
+				<div id="box1"></div>
+				<div id="box2" style="display: none;"></div>
+			</div>
+			<div class="footer">
+				Copyright
+			</div>
+		</div>
+		<script type="text/javascript">
+			function getData(){
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", "data.txt");
+				xhr.onreadystatechange = function(){
+					if(xhr.status == 200 && xhr.readyState == 4){
+						document.getElementById('box1').innerHTML = xhr.responseText;
+						getData2();
+					}
+				};
+				xhr.send(null);
+			}
+
+			function getData2(){
+				var xhr = new XMLHttpRequest();
+				xhr.open("GET", "data.txt");
+				xhr.onreadystatechange = function(){
+					if(xhr.status == 200 && xhr.readyState == 4){
+						document.getElementById('box2').style.display = "block";
+						document.getElementById('box2').innerHTML = xhr.responseText;
+					}
+				};
+				xhr.send(null);
+			}
+		</script>
+	</body>
+</html>

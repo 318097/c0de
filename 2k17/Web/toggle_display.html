@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toggle Display</title>
+		<style type="text/css">
+			div{				
+			}
+		</style>
+	</head>
+	<body>
+	<script type="text/javascript">
+		function func(){
+			alert("helo");
+			document.getElementById("target").style.display = "none";
+		}
+	</script>
+	<input type="text" name="input" id="input" onkeyup="func();"/>
+	<div id="target">
+		hello
+	</div>
+	</body>
+</html>
